@@ -74,7 +74,7 @@ Keep an eye on this space as we launch the dApp, write the white paper, and make
 Want to stay updated on the latest news, developments, and opportunities? Join the conversation:
 
 -  🌐 [Visit Our Website](http://floridaisland.com)
--  📩 Sign up for project updates and announcements.
+-  📩 [Join our Telegram for project updates and announcements.](https://t.me/FloridaIslandRWA)
 
 Let’s make history together — one wave, one token at a time. 🌊
 
