@@ -150,7 +150,7 @@ Based on the number of tokens held, users qualify for tier-based perks **once pe
 
 ### **7.2 Tier Tracking** :mag:
 
-- **On-Chain** :chains:: The holder’s wallet is read by the smart contract to validate token count at time of booking.
+- **On-Chain** The holder’s wallet is read by the smart contract to validate token count at time of booking.
 - **Off-Chain** :file_folder:: The dApp’s front-end displays current tier status and redemption availability.
 
 ---
