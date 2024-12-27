@@ -288,7 +288,7 @@ East Sister Rock Island has a long history of resilience in the face of hurrican
    - **Storm Surge Resistance** :ocean:: The main residence is built on reinforced pilings designed to keep the house elevated above storm surge levels. During hurricanes, sand often washes away from around these pilings, but the elevated home remains largely unaffected.
    - **Post-Storm Restoration** :construction_worker:: After storms, the owners employ dredging methods to recover displaced sand from nearby waters, returning it beneath the house. This proven approach helps restore the natural shoreline.
 
-2. **Recent Structural Upgrades** :tools:
+2. **Recent Structural Upgrades** :toolbox:
 
    - **Reinforced Pilings** :building_construction:: In the past year, the pilings were rebuilt and made thicker and stronger to combat concrete spalling caused by corroded rebar. These new reinforcements extend the longevity of the structure and enhance its ability to handle turbulent conditions.
    - **Improved Engineering** :blue_square:: Modern engineering practices ensure the house meets or exceeds current building codes for storm resiliency, incorporating lessons learned from the island’s decades of hurricane experience.
@@ -324,7 +324,7 @@ To mitigate financial risks associated with storm damage or other natural catast
 - **Engineering Strength** :wrench:: Elevated pilings and recent structural enhancements significantly reduce storm-surge vulnerabilities.
 - **Comprehensive Insurance** :insurance_icon:: Robust policies offer financial coverage against catastrophic loss, ensuring that repairs or payouts are executed fairly and efficiently.
 - **Historic Resilience** :recycle:: Decades of successful post-hurricane restorations underscore the island’s proven capacity for recovery.
-- **Transparent Governance** :speaking_head_in_silhouette:: Token holders will be informed of and can participate in major post-disaster decisions, preserving confidence and clarity in the investment.
+- **Transparent Governance** :speaking_head_in_silhouette: : Token holders will be informed of and can participate in major post-disaster decisions, preserving confidence and clarity in the investment.
 
 This multifaceted approach balances architectural resilience, financial planning, and on-chain governance to protect fractional owners’ interests in East Sister Rock Island.
 
