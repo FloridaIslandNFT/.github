@@ -302,7 +302,7 @@ East Sister Rock Island has a long history of resilience in the face of hurrican
    - **Improved Engineering** :blue_square:: Modern engineering practices ensure the house meets or exceeds current building codes for storm resiliency, incorporating lessons learned from the island’s decades of hurricane experience.
 
 3. **50-Year Track Record** :old_key:
-   - **Historical Performance** :calendar_spiral:: Over the last five decades, East Sister Rock Island has successfully weathered multiple hurricanes. Each event has ultimately led to improvements that further protect the property against future storms.
+   - **Historical Performance** :spiral_calendar:: Over the last five decades, East Sister Rock Island has successfully weathered multiple hurricanes. Each event has ultimately led to improvements that further protect the property against future storms.
    - **Commitment to Rebuilding** :handshake:: The owners have repeatedly demonstrated their readiness to restore the island in the aftermath of any catastrophic damage, ensuring the property remains a viable asset for investors over the long term.
 
 ---
@@ -330,7 +330,7 @@ To mitigate financial risks associated with storm damage or other natural catast
 ### **14.3 Summary of Risk Mitigation** :white_check_mark:
 
 - **Engineering Strength** :wrench:: Elevated pilings and recent structural enhancements significantly reduce storm-surge vulnerabilities.
-- **Comprehensive Insurance** :insurance_icon:: Robust policies offer financial coverage against catastrophic loss, ensuring that repairs or payouts are executed fairly and efficiently.
+- **Comprehensive Insurance** :money_with_wings:: Robust policies offer financial coverage against catastrophic loss, ensuring that repairs or payouts are executed fairly and efficiently.
 - **Historic Resilience** :recycle:: Decades of successful post-hurricane restorations underscore the island’s proven capacity for recovery.
 - **Transparent Governance** :speaking_head:: Token holders will be informed of and can participate in major post-disaster decisions, preserving confidence and clarity in the investment.
 
