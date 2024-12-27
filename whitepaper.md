@@ -324,7 +324,7 @@ To mitigate financial risks associated with storm damage or other natural catast
 - **Engineering Strength** :wrench:: Elevated pilings and recent structural enhancements significantly reduce storm-surge vulnerabilities.
 - **Comprehensive Insurance** :insurance_icon:: Robust policies offer financial coverage against catastrophic loss, ensuring that repairs or payouts are executed fairly and efficiently.
 - **Historic Resilience** :recycle:: Decades of successful post-hurricane restorations underscore the island’s proven capacity for recovery.
-- **Transparent Governance** :speaking_head_in_silhouette: : Token holders will be informed of and can participate in major post-disaster decisions, preserving confidence and clarity in the investment.
+- **Transparent Governance** :speaking_head:: Token holders will be informed of and can participate in major post-disaster decisions, preserving confidence and clarity in the investment.
 
 This multifaceted approach balances architectural resilience, financial planning, and on-chain governance to protect fractional owners’ interests in East Sister Rock Island.
 
