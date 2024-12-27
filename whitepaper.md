@@ -1,13 +1,3 @@
-Below is an **example** of how you can tastefully integrate thematic and functional icons into your Island White Paper. Each icon serves as a visual cue to help readers quickly identify key topics or concepts. Since Markdown itself doesn’t natively embed images, you can either use:
-
-1. **Unicode emojis** (simplest, but limited selection/appearance).
-2. **Inline image links** to .png or .svg icons hosted online.
-3. **Icon fonts** (like Font Awesome) if you’re converting Markdown to HTML/PDF with the right tooling.
-
-Below, you’ll see suggested icon placements. Feel free to replace the text references to icons (e.g., `:island_icon:`) with actual emoji, Font Awesome markup, or inline images.
-
----
-
 # **Florida Island Tokenization White Paper** :palm_tree:
 
 _Tokenizing a 1.25-Acre Island in Marathon, Florida via ERC-1155 Smart Contracts_ :chains:
