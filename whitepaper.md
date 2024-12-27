@@ -39,7 +39,7 @@ In traditional real estate, investing in unique or high-value properties often r
 - **Location** :world_map:: Marathon, Florida, USA
 - **Land Size** :beach_umbrella:: 1.25-acre island plus additional seabottom rights
 - **Current Market Valuation** :dollar:: \$15,000,000
-- **Monthly Rental Income** :money_with_wings:: Approximately \$100,000 (excluding special events)
+- **Monthly Rental Income** :money_with_wings:: Approximately \$100,000 (including special events)
 
 ### **3.2 Ownership Structure** :house_with_garden:
 
@@ -62,8 +62,8 @@ Each ERC-1155 token grants the holder:
 2. **Rental Income Share** :chart_with_upwards_trend:  
    0.20% of monthly island revenue per token (per the project’s marketing and distribution policy).
 
-3. **Voting / Governance** :ballot*box_with_ballot: *(Optional; Subject to Governance Model)\_  
-   Potential input on property improvements and strategic decisions (details to be finalized).
+3. **Voting / Governance** :ballot box: \*(Subject to Governance Model)\
+   All token holders vote and provide input on property improvements and strategic decisions using their fractional assets as their vote; the more tokens help the more votes a user has to impact any decision that must be voted on.
 
 > _(Note: The 0.20% revenue share per token × 1,000 tokens implies the total distribution of the 25% income pool. Actual on-chain or contractual mechanics may be configured to align with the project’s governance and revenue calculations.)_
 
@@ -86,7 +86,7 @@ To encourage participation and add exclusivity, a limited number of tokens will 
 
 ### **5.1 Monthly Rental Income** :house:
 
-The island currently generates roughly \$25,000 per month in rental income (excluding special events). This revenue is used to:
+The island currently generates roughly \$100,000 per month in rental income (including special events). This revenue is used to:
 
 1. **Cover Operating Expenses** :gear:: Maintenance, staff, and utilities.
 2. **Pay Token Holder Dividends** :heavy_dollar_sign:: 25% of net revenue is allocated to token holders (at 0.20% per token as stated).
@@ -141,10 +141,10 @@ Based on the number of tokens held, users qualify for tier-based perks **once pe
 
 | Tier                         | Tokens Held | Benefit                 |
 | ---------------------------- | ----------- | ----------------------- |
-| **Tier 1** :1st_place_medal: | 1 - 25      | 10% off 1 week per year |
+| **Tier 1** :1st_place_medal: | 1 - 24      | 10% off 1 week per year |
 | **Tier 2** :2nd_place_medal: | 25 - 50     | 20% off 1 week per year |
-| **Tier 3** :3rd_place_medal: | 50 - 100    | 40% off 1 week per year |
-| **Tier 4** :trophy:          | 100+        | 1 free week per year    |
+| **Tier 3** :3rd_place_medal: | 51 - 100    | 40% off 1 week per year |
+| **Tier 4** :trophy:          | 101+        | 1 free week per year    |
 
 > **Example** :bulb:: An investor holding 53 tokens qualifies for Tier 3, granting 40% off one rental week per year.
 
@@ -232,7 +232,7 @@ Future iterations may introduce on-chain voting for major property decisions, im
   Post-sale, token holders can trade on secondary markets or peer-to-peer. Each resale triggers a contract-enforced royalty fee, generating revenue for property maintenance and trust operations.
 
 - **Voting & Forced Sales** :hammer:  
-  Governance modules in the smart contract (if instituted) will require a threshold vote to accept a property-sale offer, after which proceeds are disbursed via the on-chain dividend mechanism.
+  Governance modules in the smart contract (when instituted) will require a threshold vote to accept a property-sale offer, after which proceeds are disbursed via the on-chain dividend mechanism.
 
 - **Title & Legal Standing** :scroll:  
   The property’s deed remains recorded in Florida; tokens serve as on-chain evidence of fractional beneficial interest, bridging legal ownership and tokenization.
