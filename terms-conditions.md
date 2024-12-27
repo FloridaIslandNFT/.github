@@ -1,6 +1,6 @@
 # **Florida Island Tokenization – Terms and Conditions**
 
-**Last Updated:** [Date]
+**Last Updated:** 27 December 2024
 
 These Terms and Conditions (“Terms”) govern your participation in the fractional ownership of a private island in Marathon, Florida (“East Sister Rock Island” or “the Property”) through the purchase and holding of ERC-1155 tokens (“Tokens”). By purchasing, holding, or otherwise transacting in the Tokens, you (“Token Holder” or “Participant”) agree to abide by the Terms set forth below. If you do not agree to these Terms, do not participate in the Token offering.
 
