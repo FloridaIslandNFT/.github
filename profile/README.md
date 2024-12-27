@@ -82,10 +82,11 @@ Let’s make history together — one wave, one token at a time. 🌊
 
 ## 📜 **References**
 
--  [**White Paper**](https://github.com/FloridaIslandNFT/.github/blob/114539c3a96b2e130b051f8e758534e9c75e47ea/whitepaper.md)  
+-  [**White Paper**](https://github.com/FloridaIslandNFT/.github/blob/master/whitepaper.md)
+
    A comprehensive guide that details the technical framework, tokenomics, and overall vision for the FloridaIsland RWA Project.
 
--  [**Terms and Conditions**](https://github.com/FloridaIslandNFT/.github/blob/114539c3a96b2e130b051f8e758534e9c75e47ea/terms-conditions.md)
+-  [**Terms and Conditions**](https://github.com/FloridaIslandNFT/.github/blob/master/terms-conditions.md)
 
    Detailed legal and operational parameters governing fractional ownership, token holder responsibilities, and project governance.
 
