@@ -253,7 +253,7 @@ Future iterations may introduce on-chain voting for major property decisions, im
 - **Potential Tax & 1031 Exchange Queries** :moneybag:  
   The trust will consult attorneys/CPAs to address individual investor questions concerning capital gains, 1031 exchanges, and other real estate tax implications.
 
-- **Blockchain vs. Legal Registry** :chain:  
+- **Blockchain vs. Legal Registry** :chains:  
   While the smart contract enforces token distribution and ownership, formal legal records remain with the trust. Courts and regulators can rely on trust documentation for any legal oversight.
 
 - **Case Law & Smart Contracts** :balance_scale:  
