@@ -53,7 +53,7 @@ These Terms and Conditions (“Terms”) govern your participation in the fracti
 
 3.1 **Monthly Rental Income**
 
--   The Property generates approximately \$25,000 USD per month in rental income under normal operating conditions, excluding special events.
+-   The Property generates approximately \$100,000 USD per month in rental income under normal operating conditions, excluding special events.
 -   Actual monthly income may fluctuate due to market demand, maintenance downtime, force majeure events, or other factors.
 
     3.2 **Distribution Mechanics**

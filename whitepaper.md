@@ -39,7 +39,7 @@ In traditional real estate, investing in unique or high-value properties often r
 - **Location** :world_map:: Marathon, Florida, USA
 - **Land Size** :beach_umbrella:: 1.25-acre island plus additional seabottom rights
 - **Current Market Valuation** :dollar:: \$15,000,000
-- **Monthly Rental Income** :money_with_wings:: Approximately \$25,000 (excluding special events)
+- **Monthly Rental Income** :money_with_wings:: Approximately \$100,000 (excluding special events)
 
 ### **3.2 Ownership Structure** :house_with_garden:
 
