@@ -153,6 +153,7 @@ Based on the number of tokens held, users qualify for tier-based perks **once pe
 | **Tier 4** :trophy:          | 101+        | 1 free week per year    |
 
 > **Example** :bulb:: An investor holding 53 tokens qualifies for Tier 3, granting 40% off one rental week per year.
+
 > **Note** :information_source:: Each Tier is redeemable only **once per year**.
 
 ### **7.2 Tier Tracking** :mag:
