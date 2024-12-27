@@ -77,7 +77,12 @@ To encourage participation and add exclusivity, a limited number of tokens will 
    - **Assignment**: Randomly assigned to 1 token among the 1,000 minted.
 
 2. **Revenue Boost (5 Tokens)** :rocket:
+
    - **Benefit**: Access to an additional 5% revenue pool generated monthly, shared equally among the 5 boost tokens. Each receives 20% of that bonus pool.
+   - **Assignment**: Randomly assigned to 5 tokens among the 1,000 minted.
+
+3. **Event Discount Boost (5 Tokens)** :tada:
+   - **Benefit**: Grants the holder a 15% discount on any special event hosted on the island—covering weddings, corporate functions, team-building activities, or family gatherings. Each holder can invite up to 40 guests to share in this exclusive experience.
    - **Assignment**: Randomly assigned to 5 tokens among the 1,000 minted.
 
 ---
@@ -110,7 +115,7 @@ ERC-1155 offers the ability to manage multiple token types (including fungible, 
    All 1,000 tokens are identical in terms of base rights, with random assignments of special boosts.
 
 2. **Boost Tokens** :sparkles:  
-   Though minted under the same contract, these tokens carry additional attributes to track Island Stay or Revenue Boost privileges.
+   Though minted under the same contract, these tokens carry additional attributes to track Island Stay, Revenue Boost privileges, or Event Discount entitlements.
 
 ### **6.2 Admin Interface** :computer:
 
@@ -123,13 +128,14 @@ An admin dashboard allows the contract owner (the island’s manager) to:
 
 ### **6.3 dApp and User Dashboard** :iphone:
 
-Token holders can connect with a Web3 wallet (e.g., MetaMask) to:
+Token holders can connect with a Web3 wallet (e.g., MetaMask or Phantom Wallet) to:
 
 - View their share of the island’s value.
 - Track monthly rental income and dividend balances.
 - Initiate withdrawals of accrued revenue.
 - Check membership tier and any special boosts.
 - Schedule an island stay if they hold the Island Stay Boost token.
+- Take advantage of their event discount entitlements
 
 ---
 
@@ -141,12 +147,13 @@ Based on the number of tokens held, users qualify for tier-based perks **once pe
 
 | Tier                         | Tokens Held | Benefit                 |
 | ---------------------------- | ----------- | ----------------------- |
-| **Tier 1** :1st_place_medal: | 1 - 24      | 10% off 1 week per year |
-| **Tier 2** :2nd_place_medal: | 25 - 50     | 20% off 1 week per year |
+| **Tier 1** :1st_place_medal: | 1 - 25      | 10% off 1 week per year |
+| **Tier 2** :2nd_place_medal: | 26 - 50     | 20% off 1 week per year |
 | **Tier 3** :3rd_place_medal: | 51 - 100    | 40% off 1 week per year |
 | **Tier 4** :trophy:          | 101+        | 1 free week per year    |
 
 > **Example** :bulb:: An investor holding 53 tokens qualifies for Tier 3, granting 40% off one rental week per year.
+> **Note** :information_source:: Each Tier is redeemable only **once per year**.
 
 ### **7.2 Tier Tracking** :mag:
 
@@ -215,7 +222,7 @@ Future iterations may introduce on-chain voting for major property decisions, im
   A REIT-like model under U.S. law allows fractional ownership of real estate through ERC-1155 tokens. The trust (e.g., East Sister Rock LLC) retains legal title, while the tokens represent beneficial interests in that trust.
 
 - **Compliance with Existing REIT Rules** :file_cabinet:  
-  U.S. regulations dictate a formal REIT registration with the IRS once fractional interests are sold. The sale is targeted for **April 2025**, affording the trust up to one year before filing necessary REIT paperwork.
+  U.S. regulations dictate a formal REIT registration with the IRS once fractional interests are sold. The sale and launch date is targeted for **April 2025**, affording the trust up to one year before filing necessary REIT paperwork.
 
 - **50% Ownership Limit and ‘No More Than Five Owners’ Rule** :no_entry_sign:  
   In line with the REIT “5/50 rule,” no five token holders can collectively surpass 50% ownership. Tokenomics will prevent exceeding thresholds by automating the process via the smart contract.
@@ -285,8 +292,8 @@ East Sister Rock Island has a long history of resilience in the face of hurrican
 
 1. **Elevated Foundation on Pilings** :houses:
 
-   - **Storm Surge Resistance** :ocean:: The main residence is built on reinforced pilings designed to keep the house elevated above storm surge levels. During hurricanes, sand often washes away from around these pilings, but the elevated home remains largely unaffected.
-   - **Post-Storm Restoration** :construction_worker:: After storms, the owners employ dredging methods to recover displaced sand from nearby waters, returning it beneath the house. This proven approach helps restore the natural shoreline.
+   - **Storm Surge Resistance** :ocean:: The main residence is built on reinforced pilings designed to keep the house elevated above storm surge levels. During rare Category 4-5 hurricanes, backfill may wash away from around the pilings, but the elevated home remains largely unaffected, showcasing its resilient design.
+   - **Post-Storm Restoration** :construction_worker:: While uncommon, if storms cause backfill displacement, the owners are experienced and prepared to address it. Utilizing proven dredging methods, they recover sand, silt, and rocks from around the island and return it beneath the house and around the island, effectively restoring the natural shoreline.
 
 2. **Recent Structural Upgrades** :toolbox:
 
@@ -301,7 +308,7 @@ East Sister Rock Island has a long history of resilience in the face of hurrican
 
 ### **14.2 Insurance Coverage & Contingencies** :shield:
 
-To mitigate financial risks associated with storm damage or other natural catastrophes, the property maintains comprehensive insurance policies. These policies are structured to cover potential damages to both the main residence and other critical infrastructure on the island:
+To mitigate financial risks associated with storm damage or other natural catastrophes, the property maintains comprehensive insurance policies. _The island home is fully insured for full repair/replacement cost in case of any natural disaster._ These policies are structured to cover potential damages to both the main residence and other critical infrastructure on the island:
 
 1. **All-Risk Property Insurance** :umbrella:
 
