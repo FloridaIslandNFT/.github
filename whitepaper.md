@@ -32,7 +32,7 @@ In traditional real estate, investing in unique or high-value properties often r
 
 ---
 
-## **3. Asset Overview** :island_icon:
+## **3. Asset Overview** :desert_island:
 
 ### **3.1 Property Description** :round_pushpin:
 
