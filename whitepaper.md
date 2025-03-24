@@ -60,12 +60,12 @@ Each ERC-1155 token grants the holder:
    Economic rights in 25% of the island’s equity, including future sale proceeds.
 
 2. **Rental Income Share** :chart_with_upwards_trend:  
-   0.010% of monthly island revenue per token (per the project’s marketing and distribution policy).
+   0.020% of monthly island revenue per token (per the project’s marketing and distribution policy).
 
 3. **Voting / Governance** :ballot_box: \*(Subject to Governance Model)\
    All token holders vote and provide input on property improvements and strategic decisions using their fractional assets as their vote; the more tokens help the more votes a user has to impact any decision that must be voted on.
 
-> _(Note: The 0.010% revenue share per token × 1,000 tokens implies the total distribution of the 25% income pool. Actual on-chain or contractual mechanics may be configured to align with the project’s governance and revenue calculations.)_
+> _(Note: The 0.020% revenue share per token × 1,000 tokens implies the total distribution of the 25% income pool. Actual on-chain or contractual mechanics may be configured to align with the project’s governance and revenue calculations.)_
 
 ### **4.2 Boost Perks** :gift:
 
@@ -94,7 +94,7 @@ To encourage participation and add exclusivity, a limited number of tokens will 
 The island currently generates roughly \$100,000 per month in rental income (including special events). This revenue is used to:
 
 1. **Cover Operating Expenses** :gear:: Maintenance, staff, and utilities.
-2. **Pay Token Holder Dividends** :heavy_dollar_sign:: 25% of net revenue is allocated to token holders (at 0.20% per token as stated).
+2. **Pay Token Holder Dividends** :heavy_dollar_sign:: 25% of net revenue is allocated to token holders (at 0.020% per token as stated).
 3. **Fund Additional Revenue Boost Pool** :star2:: 5% of total rental income is set aside for the revenue boost tokens.
 
 ### **5.2 Dividend Distribution** :bank:
