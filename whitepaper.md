@@ -6,7 +6,11 @@ _Tokenizing a 1.25-Acre Island in Marathon, Florida via ERC-1155 Smart Contracts
 
 ## **1. Executive Summary** :page_facing_up:
 
-Florida Island Tokenization is a pioneering project that leverages blockchain technology (via ERC-1155 tokens) to offer fractional ownership and profit-sharing in a 1.25-acre private island located in Marathon, Florida. By minting 1,000 tokens that collectively represent a 25% stake in the island, participants gain exposure to both ongoing rental income and future appreciation in the island’s value. This document outlines the business model, technical framework, investor perks, governance mechanisms, and compliance considerations that anchor this innovative real-world asset (RWA) tokenization venture.
+Florida Island Tokenization uses ERC-1155 shares for beneficial economic interests in a 1.25-acre private island located in Marathon, Florida. Each delivered share represents a fixed **0.020% base property interest**. At 1,000 delivered shares, the collective base interest is **20%**. Five randomly assigned revenue-benefit shares separately receive **5% of gross property rental income in total**, or **1% each**; that rental benefit does not increase their property ownership. The initial offering cap remains subject to owner confirmation; the contract supports a deployment-selected cap of 1,000–4,000, giving 20%–80% aggregate base interest at full delivery. The extra rental benefit and base net-rental allocation use different income bases and must not be described as a fixed 25% property stake. Authoritative trust documents must establish the legal rights; this implementation review does not verify title, insurance, registrations or future performance.
+
+**Version 2 — corrected allocation and implementation review.** This version replaces conflicting 25% base-ownership and base-rental statements. Public sales remain disabled until the selected deployment, offering cap and audited randomness adapter are configured. The target network is Robinhood Chain Testnet; no production contract address is represented by this document.
+
+The default engineering review configuration uses 1,000 shares; the first live offering cap awaits confirmation. Statements about property condition, history, insurance, legal title and regulatory structure are operator proposals or assertions requiring current supporting documents; this review does not independently validate them.
 
 ---
 
@@ -38,15 +42,15 @@ In traditional real estate, investing in unique or high-value properties often r
 
 -  **Location** :world_map:: Marathon, Florida, USA
 -  **Land Size** :beach_umbrella:: 1.25-acre island plus additional seabottom rights
--  **Current Market Valuation** :dollar:: \$15,000,000
--  **Monthly Rental Income** :money_with_wings:: Approximately \$100,000 (including special events)
+-  **Historical Planning Valuation** :dollar:: The original proposal used \$15,000,000; this is not a verified current appraisal. Current owner-reported values must be reviewed in the deployed reporting module with their reporting period.
+-  **Historical Rental Assumption** :money_with_wings:: The original proposal used approximately \$100,000 monthly (including special events); this is not a verified current income statement or guaranteed return.
 
 ### **3.2 Ownership Structure** :house_with_garden:
 
--  **Total Fractional Ownership for Token Holders**: 25% of the island
--  **Token Supply** :tickets:: 1,000 ERC-1155 tokens minted
--  **Ownership per Token** :pie:: Each token represents an equal fraction of the 25% stake
--  **Token Price** :moneybag:: \$4,500 USD per token at the initial launch
+-  **Base Fractional Ownership**: 0.020% per delivered share; 1,000 delivered shares represent 20% and 4,000 represent 80%.
+-  **Token Supply** :tickets:: Deployment cap selectable from 1,000 through 4,000; the initial cap requires owner confirmation. Paid reservations are distinct from delivered shares.
+-  **Ownership per Token** :pie:: A fixed 0.020% beneficial base property interest, independent of cap. Revenue benefits do not add property equity.
+-  **Token Price** :moneybag:: The original proposal used \$4,500 USD per share. The deployed primary price is denominated in ETH and may be updated by the owner. A USD price setting converts once through a verified fresh ETH/USD feed; it is not a continuous USD peg. The contract does not accept stablecoins for purchases.
 
 ---
 
@@ -57,15 +61,15 @@ In traditional real estate, investing in unique or high-value properties often r
 Each ERC-1155 token grants the holder:
 
 1. **Fractional Island Ownership** :jigsaw:  
-   Economic rights in 25% of the island’s equity, including future sale proceeds.
+   A fixed 0.020% base beneficial property interest per delivered share, including the corresponding base interest in future net sale proceeds, subject to the trust agreement.
 
 2. **Rental Income Share** :chart_with_upwards_trend:  
-   0.020% of monthly island revenue per token (per the project’s marketing and distribution policy).
+   0.020% of whole-property **net** rental income per delivered share. A delivered revenue-benefit share additionally receives 1% of whole-property **gross** rental income.
 
 3. **Voting / Governance** :ballot_box: \*(Subject to Governance Model)\
    All token holders vote and provide input on property improvements and strategic decisions using their fractional assets as their vote; the more tokens help the more votes a user has to impact any decision that must be voted on.
 
-> _(Note: The 0.020% revenue share per token × 1,000 tokens implies the total distribution of the 25% income pool. Actual on-chain or contractual mechanics may be configured to align with the project’s governance and revenue calculations.)_
+> At 1,000 delivered shares, the base allocation is 20% of net rental income. The five delivered revenue-benefit shares separately receive 5% of gross rental income. These are distinct rights and distinct calculation bases: 20% net plus 5% gross is not a 25% property stake or necessarily 25% of one income amount. Unissued rights do not redistribute to issued holders.
 
 ### **4.2 Boost Perks** :gift:
 
@@ -74,16 +78,16 @@ To encourage participation and add exclusivity, a limited number of tokens will 
 1. **Island Stay Boost (1 Token)** :hotel:
 
    -  **Benefit**: Entitles the holder to one free weekend (2 nights) on the island per year.
-   -  **Assignment**: Randomly assigned to 1 token among the 1,000 minted.
+   -  **Assignment**: One stay-benefit unit is drawn across the selected deployment cap. Its full collection count is guaranteed only when all units are assigned; categories may overlap on the same unit.
 
 2. **Revenue Boost (5 Tokens)** :rocket:
 
-   -  **Benefit**: Access to an additional 5% revenue pool generated monthly, shared equally among the 5 boost tokens. Each receives 20% of that bonus pool.
-   -  **Assignment**: Randomly assigned to 5 tokens among the 1,000 minted.
+   -  **Benefit**: Five revenue-benefit units separately share 5% of whole-property gross rental income, equally: 1% per delivered revenue-benefit unit. Their ordinary 0.020% base property and net-rental rights remain the same as every share.
+   -  **Assignment**: Five revenue-benefit units are drawn across the selected deployment cap. Only delivered benefit units accrue funded income; absent units do not increase another unit's benefit.
 
 3. **Event Discount Boost (5 Tokens)** :tada:
    -  **Benefit**: Grants the holder a 15% discount on any special event hosted on the island—covering weddings, corporate functions, team-building activities, or family gatherings. Each holder can invite up to 40 guests to share in this exclusive experience.
-   -  **Assignment**: Randomly assigned to 5 tokens among the 1,000 minted.
+   -  **Assignment**: Five event-benefit units are drawn across the selected deployment cap. Their holder may request the discount for every distinct active owner-published event, with no annual event-count limit; the same verified identity group cannot reuse one event.
 
 ---
 
@@ -91,16 +95,16 @@ To encourage participation and add exclusivity, a limited number of tokens will 
 
 ### **5.1 Monthly Rental Income** :house:
 
-The island currently generates roughly \$100,000 per month in rental income (including special events). This revenue is used to:
+Rental income varies and must be supported by operator records; the original \$100,000 monthly assumption is historical planning material. Rental revenue is intended to:
 
 1. **Cover Operating Expenses** :gear:: Maintenance, staff, and utilities.
-2. **Pay Token Holder Dividends** :heavy_dollar_sign:: 25% of net revenue is allocated to token holders (at 0.020% per token as stated).
-3. **Fund Additional Revenue Boost Pool** :star2:: 5% of total rental income is set aside for the revenue boost tokens.
+2. **Pay Base Dividends** :heavy_dollar_sign:: Each delivered share receives 0.020% of whole-property net rental income: 20% collectively at 1,000 delivered shares or 80% at 4,000.
+3. **Fund Additional Revenue Boost Pool** :star2:: Each delivered revenue-benefit unit receives 1% of whole-property gross rental income; all five collectively receive 5%. This benefit adds income, not property equity.
 
 ### **5.2 Dividend Distribution** :bank:
 
 -  **Frequency** :calendar:: Quarterly disbursements to reduce gas fees and streamline accounting.
--  **On-Chain Accounting** :ledger:: All revenue data is entered by the owner via an admin dashboard. The smart contract calculates each token holder’s share based on the number of tokens held.
+-  **On-Chain Accounting** :ledger:: Reports are owner attestations and do not send rent into the contract. The operator enters whole-property net and gross rental income separately and funds `basePool = netIncome × deliveredShares / 5,000` and `boostPool = grossIncome × deliveredRevenueUnits / 100`. The contract checks the delivered counts and exact ETH funding, divides each funded pool by its respective delivered count, and preserves prior account accrual after transfers. The owner supplies the ETH; unissued rights are not funded or redistributed.
 -  **Withdrawal Mechanism** :arrow_down:: A “Withdraw” button within the dApp allows token holders to claim their accrued dividends.
 
 ---
@@ -112,7 +116,7 @@ The island currently generates roughly \$100,000 per month in rental income (inc
 ERC-1155 offers the ability to manage multiple token types (including fungible, semi-fungible, and non-fungible tokens) under one contract, which is both gas-efficient and flexible. For this project:
 
 1. **Fractional Ownership Tokens** :pie:  
-   All 1,000 tokens are identical in terms of base rights, with random assignments of special boosts.
+   Every delivered unit has identical base rights, with benefit types represented by the bitmask IDs 0–7 and fungible quantities. Paid purchases await verifiable randomness, ordered assignment and buyer-claimed delivery.
 
 2. **Boost Tokens** :sparkles:  
    Though minted under the same contract, these tokens carry additional attributes to track Island Stay, Revenue Boost privileges, or Event Discount entitlements.
@@ -158,8 +162,8 @@ Based on the number of tokens held, users qualify for tier-based perks **once pe
 
 ### **7.2 Tier Tracking** :mag:
 
--  **On-Chain** :chains:: The holder’s wallet is read by the smart contract to validate token count at time of booking.
--  **Off-Chain** :file_folder:: The dApp’s front-end displays current tier status and redemption availability.
+-  **On-Chain** :chains:: The holder's single-wallet tier and benefit balances are checked on request and confirmation. The standalone benefit registry records requests, pending cancellations and owner confirmations. Annual periods use the UTC calendar year of service start. One membership seven-night week per verified identity group per year is allowed; the rare two-night stay also has one collection-wide annual allowance.
+-  **Identity and Delivery** :file_folder:: An approved wallet is permanently bound to an opaque owner-attested identity group, so linked or recovery wallets share annual usage without publishing names or identity documents. Confirmed use consumes quota; only pending cancellation releases it. Confirmation attests operator acceptance, not proof of physical accommodation, payment or legal identity. Availability, scheduling and actual service remain operator responsibilities.
 
 ---
 
@@ -167,10 +171,12 @@ Based on the number of tokens held, users qualify for tier-based perks **once pe
 
 ### **8.1 Island Sale** :money_with_wings:
 
-If the island is sold in the future, 25% of the sale proceeds will be allocated to token holders. The distribution is:
+If the island is sold in the future, each delivered share's base beneficial interest is 0.020% of net proceeds after applicable costs, subject to the governing trust agreement. The distribution is:
 
--  **Base Allocation** :balance_scale:: Each token receives a pro rata share of the 25% of proceeds.
--  **Revenue Boost Tokens** :star2:: Also participate in their share of the extra 5% pool if that pool is capitalized upon sale (as stated in the project’s documentation).
+-  **Base Allocation** :balance_scale:: Fixed 0.020% per delivered share; 1,000 shares collectively represent 20%, and 4,000 represent 80%.
+-  **Revenue Boost Tokens** :star2:: An additional sale-proceeds bonus remains conditional and requires an explicit owner/trust decision. The 5% rental benefit does not automatically extend to a sale; no sale-bonus funding is enabled by default.
+
+The owner can explicitly fund the documented base sale allocation through the dApp: `basePool = operatorAttestedNetSaleProceeds × deliveredShares / 5,000`, with a zero additional pool while the conditional bonus remains unconfirmed. Both delivered base and revenue-unit counts are checked, and the owner's wallet supplies the exact ETH allocation with separate gas funds. Integer calculations round down to whole wei. This creates funded account claims; it does not execute a deed transfer, verify the sale or settle the legal trust agreement.
 
 ### **8.2 Property Value Updates** :chart_with_upwards_trend:
 
@@ -182,7 +188,7 @@ The property owner can update the appraised value yearly. This updated data, sto
 
 ### **9.1 Resale and Transfer** :handshake:
 
-Tokens can be resold on supported NFT marketplaces or transferred peer-to-peer. A transaction fee (royalty) is automatically deducted, part of which goes to the project treasury for maintenance and operational costs.
+Approved wallets can use the integrated secondary marketplace or compliant peer-to-peer transfers. Integrated listings and offers capture their affiliate, royalty and marketing fee terms when created and apply them on paid settlement. ERC-2981 advertises royalty information to external marketplaces, whose payment cannot be forced by this contract. A plain peer-to-peer transfer does not automatically collect royalties.
 
 ### **9.2 Transaction History** :ledger:
 
@@ -202,7 +208,7 @@ Initially, governance lies with the project’s founding entity, managing:
 
 ### **10.2 Potential Decentralized Governance** :globe_with_meridians:
 
-Future iterations may introduce on-chain voting for major property decisions, improvements, or expansions. This would allow token holders to propose and vote on initiatives using their tokens as governance weight.
+The on-chain governance module records proposals, delivered-share voting snapshots, quorum and outcomes. Proposal periods have fixed bounds of one through thirty days. Approved holders can vote using their recorded snapshot weight; execution records the outcome but does not automatically execute a property sale, payment or legal agreement. Operational and legal implementation remain the owner's responsibility under the trust documents.
 
 ---
 
@@ -223,32 +229,32 @@ Future iterations may introduce on-chain voting for major property decisions, im
    A REIT-like model under U.S. law allows fractional ownership of real estate through ERC-1155 tokens. The trust (e.g., East Sister Rock LLC) retains legal title, while the tokens represent beneficial interests in that trust.
 
 -  **Compliance with Existing REIT Rules** :file_cabinet:  
-   U.S. regulations dictate a formal REIT registration with the IRS once fractional interests are sold. The sale and launch date is targeted for **April 2025**, affording the trust up to one year before filing necessary REIT paperwork.
+   The original proposal discussed a REIT structure and an April 2025 launch. Those dates and legal assumptions are historical planning material, not a current launch authorization or verified filing status. The trust and its advisers must establish the correct legal structure, registrations and offering permissions before a live sale.
 
 -  **50% Ownership Limit and ‘No More Than Five Owners’ Rule** :no_entry_sign:  
-   In line with the REIT “5/50 rule,” no five token holders can collectively surpass 50% ownership. Tokenomics will prevent exceeding thresholds by automating the process via the smart contract.
+   The intended regulatory structure and applicable concentration rules require authoritative legal and identity review. The contract enforces owner-attested wallet approval and a wallet holding limit, not complete beneficial-owner aggregation or an independently verified REIT “5/50” test. Linking wallets for benefit usage does not itself establish regulatory compliance.
 
 ### **12.2 Security & Sale Mechanics** :shield:
 
 -  **Token Sale Launch** :money_mouth_face:  
-   Between **April 2025** and April 2026, the trust will complete its token sale. After this period, REIT registration and documentation will be filed.
+   The original April 2025–April 2026 schedule is historical planning material. No current sale is authorized until the owner confirms the offering cap and the deployment, audited randomness adapter and applicable legal permissions are established.
 
 -  **AML/KYC & Investor Vetting** :lock:  
-   All prospective buyers must pass dApp-based AML/KYC checks. If any purchase attempt risks breaching REIT thresholds, the smart contract will automatically block the transaction.
+   Participants require external identity review and owner-attested wallet approval before purchases, delivery, share transfers or dividend claims. The contract can block unapproved wallets and wallet-cap violations. It does not verify personal identity or every legal concentration threshold, and no personal identity documents belong on chain.
 
 -  **Secondary Market Trading & Royalties** :money_with_wings:  
-   Post-sale, token holders can trade on secondary markets or peer-to-peer. Each resale triggers a contract-enforced royalty fee, generating revenue for property maintenance and trust operations.
+   The integrated marketplace deducts its recorded royalty/affiliate/marketing terms. ERC2981 publishes royalty information, but arbitrary external marketplaces and payment-free peer-to-peer transfers do not automatically enforce royalty payments.
 
 -  **Voting & Forced Sales** :hammer:  
-   Governance modules in the smart contract (when instituted) will require a threshold vote to accept a property-sale offer, after which proceeds are disbursed via the on-chain dividend mechanism.
+   Governance records a delivered-share snapshot vote and quorum outcome. It does not accept or execute a real property-sale offer or automatically fund proceeds. The owner and trust must implement legal decisions and fund any distributions explicitly.
 
 -  **Title & Legal Standing** :scroll:  
-   The property’s deed remains recorded in Florida; tokens serve as on-chain evidence of fractional beneficial interest, bridging legal ownership and tokenization.
+   Legal title and beneficial rights must be established by current authoritative property and trust documents. Token balances provide on-chain evidence of units, not independent proof of title or enforceability.
 
 ### **12.3 Regulatory Considerations & Risk Mitigation** :mag:
 
 -  **Securities Regulation** :clipboard:  
-   Fractional real estate interests may constitute securities under U.S. law. Proper structuring, timing, and legal filings with state and federal entities will ensure compliance.
+   Fractional real estate interests may constitute securities under U.S. law. The trust and its advisers must determine and obtain the required registrations, exemptions and offering permissions. Wallet approval and contract execution do not certify compliance.
 
 -  **Potential Tax & 1031 Exchange Queries** :moneybag:  
    The trust will consult attorneys/CPAs to address individual investor questions concerning capital gains, 1031 exchanges, and other real estate tax implications.
@@ -257,16 +263,16 @@ Future iterations may introduce on-chain voting for major property decisions, im
    While the smart contract enforces token distribution and ownership, formal legal records remain with the trust. Courts and regulators can rely on trust documentation for any legal oversight.
 
 -  **Case Law & Smart Contracts** :balance_scale:  
-   Recent court rulings highlight that decentralized smart contracts are often outside direct manipulation, ensuring transparent and bias-free execution. Nevertheless, the project will strictly observe REIT regulations and relevant SEC guidelines.
+   On-chain records do not determine legal enforceability or establish regulatory compliance. Owner controls, operator obligations and trust documents remain relevant; independent legal review is required for the real-world offering.
 
 ### **12.4 Summary of Compliance Roadmap** :triangular_flag_on_post:
 
-1. **Sale Commencement (April 2025)** :rocket:: Begin token sales to fractional owners.
-2. **One-Year Selling Period** :hourglass_flowing_sand:: Comply with REIT rules requiring registration within one year of offering.
-3. **AML/KYC Enforcement** :lock_with_ink_pen:: The dApp ensures each wallet’s eligibility and prevents ownership caps from being exceeded.
-4. **Smart Contract Governance** :gear:: Programmed to handle forced sales, property valuation updates, and royalty payments.
+1. **Offering Readiness** :rocket:: Confirm the live cap, trust rights, permissions, reviewed deployment and audited randomness adapter before enabling sales.
+2. **Legal Structure** :hourglass_flowing_sand:: Obtain current legal and tax advice and required filings; the historical schedule is not a verified rule or deadline.
+3. **AML/KYC Attestation** :lock_with_ink_pen:: Perform external identity review, then attest wallet approval; the contract enforces configured per-wallet limits without independently aggregating beneficial owners.
+4. **Smart Contract Governance** :gear:: Record snapshot-based proposals and outcomes; operator action remains required for property decisions, reports and funded distributions.
 
-This structure provides a secure environment for fractional island ownership on the blockchain, balancing innovative DeFi technology with existing real estate regulations.
+The implementation supplies on-chain records and controls. Its legal, security and real-world operating obligations remain subject to independent review and operator fulfillment.
 
 ---
 

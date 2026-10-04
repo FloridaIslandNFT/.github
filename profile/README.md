@@ -2,6 +2,8 @@
 
 **Your Gateway to Private Island Ownership Through Blockchain Innovation**
 
+**Implementation review:** The completed application and ERC1155 v2 contracts are available on `codex/complete-contract-dapp`. Each delivered share has 0.020% base beneficial property interest; five randomly assigned revenue-benefit units separately receive 1% gross rental income each. The target is Robinhood Chain Testnet, with sales disabled while verified randomness, offering settings and public-testnet acceptance are completed. See the [current application readiness](https://github.com/FloridaIslandNFT/rwa-dapp/blob/codex/complete-contract-dapp/docs/RELEASE_READINESS.md), [whitepaper](../whitepaper.md) and [terms](../terms-conditions.md). The material below describes the project's vision; it does not certify current income, property title or a live offering.
+
 ---
 
 ## 🌊 **About East Sister Rock Island**
@@ -82,11 +84,11 @@ Let’s make history together — one wave, one token at a time. 🌊
 
 ## 📜 **References**
 
--  [**White Paper**](https://github.com/FloridaIslandNFT/.github/blob/master/whitepaper.md)
+-  [**White Paper**](../whitepaper.md)
 
    A comprehensive guide that details the technical framework, tokenomics, and overall vision for the FloridaIsland RWA Project.
 
--  [**Terms and Conditions**](https://github.com/FloridaIslandNFT/.github/blob/master/terms-conditions.md)
+-  [**Terms and Conditions**](../terms-conditions.md)
 
    Detailed legal and operational parameters governing fractional ownership, token holder responsibilities, and project governance.
 

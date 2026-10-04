@@ -1,6 +1,8 @@
 # **Florida Island Tokenization – Terms and Conditions**
 
-**Last Updated:** 27 December 2024
+**Version:** 2 — corrected allocation and implementation review; supersedes conflicting 25% base-allocation wording. The initial offering cap and any additional property-sale bonus require confirmation before a live offering.
+
+The default engineering review configuration uses 1,000 shares. Statements about title, insurance, condition and regulatory structure are operator assertions requiring current supporting documents; this implementation review does not verify them or establish legal enforceability.
 
 These Terms and Conditions (“Terms”) govern your participation in the fractional ownership of a private island in Marathon, Florida (“East Sister Rock Island” or “the Property”) through the purchase and holding of ERC-1155 tokens (“Tokens”). By purchasing, holding, or otherwise transacting in the Tokens, you (“Token Holder” or “Participant”) agree to abide by the Terms set forth below. If you do not agree to these Terms, do not participate in the Token offering.
 
@@ -10,7 +12,7 @@ These Terms and Conditions (“Terms”) govern your participation in the fracti
 
 1.1 **Tokenization**
 
--   Florida Island Tokenization (“the Project”) issues up to 1,000 ERC-1155 Tokens, collectively representing 25% fractional ownership of the Property.
+-   Each delivered ERC-1155 share represents a fixed 0.020% base beneficial property interest. At 1,000 delivered shares the aggregate is 20%; at 4,000 it is 80%. The contract supports a deployment-selected cap from 1,000 through 4,000; the initial offering cap is not yet confirmed. A separate rental-income benefit does not add property ownership.
 -   Each Token confers certain rights to its Holder, including a share in the Property’s monthly rental income and a share in future sale proceeds.
 
     1.2 **Scope of Ownership**
@@ -29,18 +31,18 @@ These Terms and Conditions (“Terms”) govern your participation in the fracti
 
 2.1 **Purchasing Tokens**
 
--   Tokens will be offered during a specified sale period (targeted to begin around April 2025). Participants may purchase Tokens via supported blockchain wallets (e.g., MetaMask), subject to any AML/KYC requirements.
--   The initial price for each Token is set at \$4,500 USD, payable in accepted cryptocurrencies or stablecoins, as determined by the Project.
+-   A live sale period requires a confirmed offering cap, verified deployment and audited randomness adapter. The original April 2025 target is historical planning material. Participants use supported EVM wallets, subject to operator eligibility review and applicable AML/KYC requirements.
+-   The original proposal used a \$4,500 USD initial price. The contract's current configured price is payable in ETH; stablecoin purchase support is not implemented. An owner-set USD price converts once through a verified fresh ETH/USD feed and does not remain continuously pegged to USD.
 
     2.2 **Secondary Market**
 
--   After the initial offering, Tokens may be listed for resale on supported NFT marketplaces or transferred peer-to-peer.
--   The Trust, or an authorized entity, may impose royalties or transaction fees on each Token transfer, as encoded in the smart contract.
+-   Approved wallets may list delivered units on the integrated marketplace or transfer them peer-to-peer within the configured wallet limit.
+-   Integrated paid listings and offers apply their captured fee terms. ERC-2981 advertises external marketplace royalties, whose payment cannot be forced by this contract. Plain peer-to-peer transfers do not automatically pay royalties.
 
     2.3 **Transfer Restrictions**
 
--   The Project may enforce ownership caps to comply with Real Estate Investment Trust (“REIT”) rules or other regulatory limits (e.g., the “5/50 rule”).
--   AML/KYC checks are mandatory for all Participants. The smart contract or dApp may automatically restrict transfers that exceed regulatory thresholds.
+-   The owner configures a per-wallet delivered-plus-pending share limit. That limit does not aggregate beneficial owners across wallets and does not independently enforce REIT “5/50” requirements.
+-   Required AML/KYC review is performed outside the contract. The owner attests wallet approval on chain; the contract gates purchases, delivery, transfers and dividend claims using that approval. No names or identity documents are published by the dApp.
 
     2.4 **No Guarantee of Profit**
 
@@ -53,18 +55,19 @@ These Terms and Conditions (“Terms”) govern your participation in the fracti
 
 3.1 **Monthly Rental Income**
 
--   The Property generates approximately \$100,000 USD per month in rental income under normal operating conditions, including special events.
+-   The original proposal used approximately \$100,000 USD monthly rental income (including special events) as planning material. It is not a verified current income statement or a guaranteed return; dated owner reports and underlying operator records must be reviewed.
 -   Actual monthly income may fluctuate due to market demand, maintenance downtime, force majeure events, or other factors.
 
     3.2 **Distribution Mechanics**
 
--   **Dividend Allocations**: 25% of net rental income is allocated to Token Holders, distributed pro rata based on the number of Tokens held.
+-   **Base Dividend Allocations**: Every delivered share receives 0.020% of whole-property net rental income. Unissued shares do not enlarge another holder's allocation. At 1,000 delivered shares the collective base allocation is 20% of net rental income, separate from the gross-income revenue benefit.
 -   **Quarterly Payout**: Dividends are typically disbursed quarterly to reduce administrative costs and gas fees.
 -   **Withdrawal**: Token Holders must connect their wallets via the Project’s dApp and initiate a “Withdraw” transaction to claim accrued dividends.
 
     3.3 **Revenue Boost Tokens**
 
--   Up to 5 Tokens are assigned “Revenue Boost” status, providing access to an additional 5% revenue pool, shared equally. Each of these 5 Tokens receives 20% of that extra pool.
+-   Five units are randomly assigned Revenue Boost status across the deployment-selected cap. Each delivered revenue-benefit unit receives an additional 1% of whole-property gross rental income; all five collectively receive 5%. Each retains its ordinary 0.020% base property and net-rental rights. The benefit is additional income, not additional equity. If a benefit unit is not delivered, its allocation is not redistributed to another holder.
+-   The owner must supply real ETH funding for these allocations. Reports do not fund dividends automatically. The funding transaction checks expected delivered base/revenue counts and exact payment; previously accrued dividends remain with the account entitled at deposit after a transfer. Bare ETH receipts do not create a dividend round.
 
 ---
 
@@ -72,13 +75,15 @@ These Terms and Conditions (“Terms”) govern your participation in the fracti
 
 4.1 **Island Stay Boost**
 
--   1 randomly assigned Token entitles its Holder to one free weekend (2 nights) per year on the Property.
+-   One randomly assigned stay-benefit unit entitles its eligible holder to a two-night stay per UTC service-start year, subject to owner confirmation. The registry permits one confirmed collection-wide stay per year; pending reservations consume availability until cancelled or confirmed.
 -   Subject to availability and scheduling; black-out dates or certain restrictions may apply.
 
     4.2 **Membership Tiers**
 
--   Tiers (1–4) are based on the number of Tokens held in a single wallet. Each tier grants annual discounts or free stays (per the White Paper).
+-   Tiers use delivered shares in a single wallet: 1–25 gives 10% off one seven-night week; 26–50 gives 20%; 51–100 gives 40%; 101+ gives one free seven-night week per UTC service-start year. Linked/recovery wallets in an owner-attested opaque identity group share one annual membership use. Wallets cannot be rebound to reset usage. No personal identity information is published by this grouping.
 -   Token Holders are responsible for making timely reservations via the official dApp interface.
+-   Five event-benefit units grant 15% off each distinct active owner-published event for up to 40 invited guests, without an annual event-count limit. Each verified identity group may use one discount per distinct event.
+-   Requests reserve quota; only pending cancellation releases it. Confirmation checks current eligibility/holdings and consumes quota. An on-chain confirmation is operator acceptance, not proof of physical service, accommodation payment, title or legal identity. Availability and fulfillment remain operator responsibilities.
 
 ---
 
@@ -101,8 +106,9 @@ These Terms and Conditions (“Terms”) govern your participation in the fracti
 
 6.1 **Property Sale**
 
--   If the Property is sold, 25% of the net proceeds (after liens, costs, and taxes) will be allocated to Token Holders, proportional to the number of Tokens held.
--   “Revenue Boost” Tokens may receive additional allocations if the extra revenue pool is triggered upon sale.
+-   Each delivered share's base beneficial interest is 0.020% of net sale proceeds after liens, costs and taxes, subject to the governing trust agreement. At 1,000 shares that collective base interest is 20%, not 25%.
+-   An additional sale-proceeds bonus for revenue-benefit units remains conditional on an explicit owner/trust decision. The 5% gross rental-income benefit does not automatically apply to a property sale. No additional sale-bonus funding is enabled by default.
+-   The owner may fund the documented base sale allocation from operator-attested net proceeds: net proceeds × delivered shares ÷ 5,000, with whole-wei rounding and no additional bonus pool until confirmed. The funding transaction checks delivered base/revenue counts and requires the owner's exact ETH payment. It creates funded claims without executing a deed transfer, verifying the property sale or settling the trust's legal obligations.
 
     6.2 **Forced Sale or Buyout**
 
@@ -135,7 +141,7 @@ These Terms and Conditions (“Terms”) govern your participation in the fracti
 8.1 **REIT Compliance**
 
 -   The Project intends to structure its offering to align with U.S. REIT rules, including but not limited to ownership caps (the “5/50 rule”) and formal registration with the IRS.
--   Sale timelines are chosen to accommodate the one-year window for finalizing REIT documentation post-offering.
+-   The trust and its advisers must establish the applicable structure, filing requirements and current offering schedule; historical dates do not authorize a live offering.
 
     8.2 **Securities Laws**
 
