@@ -1,230 +1,296 @@
-# **Florida Island Tokenization – Terms and Conditions**
+# Florida Island terms and conditions
 
-**Version:** 2 — corrected allocation and implementation review; supersedes conflicting 25% base-allocation wording. The initial offering cap and any additional property-sale bonus require confirmation before a live offering.
+**Version 2.** This version fixes the earlier 25% base share claim. The owner must confirm the cap for the first live sale. Before a live sale, the owner must also confirm any extra island-sale bonus.
 
-The default engineering review configuration uses 1,000 shares. Statements about title, insurance, condition and regulatory structure are operator assertions requiring current supporting documents; this implementation review does not verify them or establish legal enforceability.
+The review setup uses 1,000 shares. Claims about title, insurance, condition and legal structure come from the island team. Those claims need current records. This review does not check them. It does not establish rights a court will enforce.
 
-These Terms and Conditions (“Terms”) govern your participation in the fractional ownership of a private island in Marathon, Florida (“East Sister Rock Island” or “the Property”) through the purchase and holding of ERC-1155 tokens (“Tokens”). By purchasing, holding, or otherwise transacting in the Tokens, you (“Token Holder” or “Participant”) agree to abide by the Terms set forth below. If you do not agree to these Terms, do not participate in the Token offering.
+These terms apply to shares in East Sister Rock Island. It is in Marathon, Florida. In these terms, “Island” means that property. “Shares” means its ERC-1155 digital shares, also called tokens. A “Holder” or “Participant” means a person who buys, holds or trades Shares.
 
----
+When you buy, hold or trade Shares, you agree to these terms. If you do not agree, do not take part in the Share sale.
 
-## **1. Overview**
+## Words used in these terms
 
-1.1 **Tokenization**
+- **Wallet:** An app that holds your account. It lets you sign chain requests.
+- **ETH:** The coin used for payments on this chain. You also need ETH for fees.
+- **Gas:** The fee to send a chain request.
+- **Contract:** Code on the chain that follows set rules. It tracks shares and funded claims.
+- **Chain:** The shared record where the contract runs.
+- **Pending shares:** Shares you paid for but did not get yet.
+- **Received shares:** Shares that the contract delivered to an approved wallet. They are no longer just a paid reservation.
+- **Base interest:** Your fixed right to trust benefits for each received share. It does not give direct legal title.
+- **Net rent:** Rent from the whole island left after costs.
+- **Gross rent:** Rent from the whole island before costs.
+- **Trust:** The legal body that holds title and sets holder rights.
+- **ID group:** A group of wallets for one person the owner checked. The public code holds no name or ID file.
+- **Claim:** A chain request to receive shares or money that you can receive under the contract rules.
+- **Boost:** An extra perk assigned by the draw. It may add a stay, rent income or an event discount.
 
--   Each delivered ERC-1155 share represents a fixed 0.020% base beneficial property interest. At 1,000 delivered shares the aggregate is 20%; at 4,000 it is 80%. The contract supports a deployment-selected cap from 1,000 through 4,000; the initial offering cap is not yet confirmed. A separate rental-income benefit does not add property ownership.
--   Each Token confers certain rights to its Holder, including a share in the Property’s monthly rental income and a share in future sale proceeds.
+## 1. What the shares represent
 
-    1.2 **Scope of Ownership**
+### 1.1 Digital shares
 
--   Legal title to the Property is held in a trust or similar entity (“the Trust”), which remains recorded in Monroe County, Florida.
--   Tokens represent _beneficial_ or _economic_ interests in the Trust; they do not grant direct legal title to the real estate or managerial authority over the Trust.
+Each share you get has a fixed base island interest. It is **0.020%**. This is a beneficial interest. That means a right to benefits under the trust terms.
 
-    1.3 **Use of Proceeds**
+- **1,000 received shares** have a total base interest of **20%**.
+- **4,000 received shares** have a total base interest of **80%**.
+- The owner chooses the cap when the contract starts. It can be **1,000 through 4,000**.
+- The first sale cap is not yet confirmed.
+- The extra rent perk does not add island ownership.
 
--   Capital raised from the Token offering may be used to maintain, upgrade, or operate the Property, as outlined in the accompanying White Paper.
--   The Trust may withhold a portion of revenues (e.g., for ongoing maintenance, taxes, or fees) before distributing dividends to Token Holders.
+Each Share gives the holder certain rights. These include a share of rent income each month and future sale proceeds.
 
----
+### 1.2 Legal ownership
 
-## **2. Token Acquisition and Sale**
+A trust or similar body holds legal title to the Island. These terms call that body “the Trust.” The title stays recorded in Monroe County, Florida.
 
-2.1 **Purchasing Tokens**
+Shares give beneficial or economic interests in the Trust. These are rights to trust benefits or money. They do not give direct legal title to the island. They do not give the holder power to manage the Trust.
 
--   A live sale period requires a confirmed offering cap, verified deployment and audited randomness adapter. The original April 2025 target is historical planning material. Participants use supported EVM wallets, subject to operator eligibility review and applicable AML/KYC requirements.
--   The original proposal used a \$4,500 USD initial price. The contract's current configured price is payable in ETH; stablecoin purchase support is not implemented. An owner-set USD price converts once through a verified fresh ETH/USD feed and does not remain continuously pegged to USD.
+### 1.3 Use of sale funds
 
-    2.2 **Secondary Market**
+Funds from Share sales may pay for upkeep, upgrades or running the island. The white paper explains those uses.
 
--   Approved wallets may list delivered units on the integrated marketplace or transfer them peer-to-peer within the configured wallet limit.
--   Integrated paid listings and offers apply their captured fee terms. ERC-2981 advertises external marketplace royalties, whose payment cannot be forced by this contract. Plain peer-to-peer transfers do not automatically pay royalties.
+The Trust may keep some rent income for costs before it pays dividends. Those costs may include upkeep, taxes or fees. A dividend is income paid to holders.
 
-    2.3 **Transfer Restrictions**
+## 2. Buying, selling and sending shares
 
--   The owner configures a per-wallet delivered-plus-pending share limit. That limit does not aggregate beneficial owners across wallets and does not independently enforce REIT “5/50” requirements.
--   Required AML/KYC review is performed outside the contract. The owner attests wallet approval on chain; the contract gates purchases, delivery, transfers and dividend claims using that approval. No names or identity documents are published by the dApp.
+### 2.1 Buying Shares
 
-    2.4 **No Guarantee of Profit**
+A live sale needs these items:
 
--   Purchasing Tokens involves inherent risks, including but not limited to real estate market volatility, regulatory changes, and technology risks.
--   There is no assurance that the Token value will increase, that dividends will be paid continuously, or that any future sale will occur at a profit.
+1. A confirmed sale cap.
+2. A checked contract setup.
+3. A random draw tool checked by an auditor.
 
----
+The old **April 2025** target was part of a plan. Buyers use EVM wallets that the app supports. EVM wallets work with contracts that follow Ethereum rules. The island team must check whether buyers meet the rules. It must check the AML/KYC rules that apply.
 
-## **3. Rental Income and Dividends**
+AML means anti-money-laundering checks. These check for unlawful use of money. KYC means know-your-customer checks. These check who a person is.
 
-3.1 **Monthly Rental Income**
+The first plan used **$4,500 USD** as its first price. The contract's current price is paid in **ETH**. The contract does not support stablecoin purchases.
 
--   The original proposal used approximately \$100,000 USD monthly rental income (including special events) as planning material. It is not a verified current income statement or a guaranteed return; dated owner reports and underlying operator records must be reviewed.
--   Actual monthly income may fluctuate due to market demand, maintenance downtime, force majeure events, or other factors.
+The owner can set a USD price with an ETH/USD price feed. The feed must be checked and fresh. It converts the price to ETH once. The price does not then keep tracking USD.
 
-    3.2 **Distribution Mechanics**
+### 2.2 Selling shares or transferring them
 
--   **Base Dividend Allocations**: Every delivered share receives 0.020% of whole-property net rental income. Unissued shares do not enlarge another holder's allocation. At 1,000 delivered shares the collective base allocation is 20% of net rental income, separate from the gross-income revenue benefit.
--   **Quarterly Payout**: Dividends are typically disbursed quarterly to reduce administrative costs and gas fees.
--   **Withdrawal**: Token Holders must connect their wallets via the Project’s dApp and initiate a “Withdraw” transaction to claim accrued dividends.
+Approved wallets may list shares they received in this market. They may also send shares to other wallets within the set wallet limit.
 
-    3.3 **Revenue Boost Tokens**
+Paid listings and offers use the fee terms saved when they start. ERC-2981 publishes royalty details for outside markets. A royalty is a fee under the trade terms. This contract cannot force an outside market to pay it.
 
--   Five units are randomly assigned Revenue Boost status across the deployment-selected cap. Each delivered revenue-benefit unit receives an additional 1% of whole-property gross rental income; all five collectively receive 5%. Each retains its ordinary 0.020% base property and net-rental rights. The benefit is additional income, not additional equity. If a benefit unit is not delivered, its allocation is not redistributed to another holder.
--   The owner must supply real ETH funding for these allocations. Reports do not fund dividends automatically. The funding transaction checks expected delivered base/revenue counts and exact payment; previously accrued dividends remain with the account entitled at deposit after a transfer. Bare ETH receipts do not create a dividend round.
+A plain transfer between wallets does not charge royalty fees.
 
----
+### 2.3 Transfer limits
 
-## **4. Island Stay and Membership Tiers**
+The owner sets a wallet share limit. It counts received shares plus pending shares. It does not count one person's holdings across many wallets. It does not enforce the REIT **5/50** rules on its own.
 
-4.1 **Island Stay Boost**
+A REIT is a real estate investment trust. Its ownership tests need legal review outside the contract.
 
--   One randomly assigned stay-benefit unit entitles its eligible holder to a two-night stay per UTC service-start year, subject to owner confirmation. The registry permits one confirmed collection-wide stay per year; pending reservations consume availability until cancelled or confirmed.
--   Subject to availability and scheduling; black-out dates or certain restrictions may apply.
+The needed AML/KYC review takes place outside the contract. The owner approves wallets on the chain. Approval controls buying, getting and sending shares. It also controls dividend claims. The app does not publish names or ID files.
 
-    4.2 **Membership Tiers**
+### 2.4 No promised gains
 
--   Tiers use delivered shares in a single wallet: 1–25 gives 10% off one seven-night week; 26–50 gives 20%; 51–100 gives 40%; 101+ gives one free seven-night week per UTC service-start year. Linked/recovery wallets in an owner-attested opaque identity group share one annual membership use. Wallets cannot be rebound to reset usage. No personal identity information is published by this grouping.
--   Token Holders are responsible for making timely reservations via the official dApp interface.
--   Five event-benefit units grant 15% off each distinct active owner-published event for up to 40 invited guests, without an annual event-count limit. Each verified identity group may use one discount per distinct event.
--   Requests reserve quota; only pending cancellation releases it. Confirmation checks current eligibility/holdings and consumes quota. An on-chain confirmation is operator acceptance, not proof of physical service, accommodation payment, title or legal identity. Availability and fulfillment remain operator responsibilities.
+Buying Shares has risks. Island markets and laws can change. The tools we use can fail.
 
----
+Share value may not rise. Dividends may not continue. A future sale may not make a gain.
 
-## **5. Governance and Voting**
+## 3. Rent and dividends
 
-5.1 **Operational Control**
+### 3.1 Rent income
 
--   The Trust (or Project Owner) retains primary authority over daily operations, maintenance, and improvements.
--   Significant decisions (e.g., property sale, major capital expenditures) may be put to a vote, subject to governance modules in the smart contract.
+The first plan used about **$100,000 USD a month**, with special events included. This came from an old plan. It is not a checked report of income now or a promised return.
 
-    5.2 **Voting Rights**
+Read dated owner reports. Check the island team's records that support them.
 
--   Each Token generally represents one vote, unless otherwise specified by the governance model.
--   A threshold majority (defined by the Trust or governance documents) is required to approve major decisions.
--   Certain regulatory constraints (e.g., REIT compliance) may override or limit on-chain voting outcomes.
+Income each month may change with demand. Closures for repairs may affect it too. Events beyond the island team's control may affect it. Other factors may also affect income.
 
----
+### 3.2 Base rental payments
 
-## **6. Future Sale and Liquidation**
+Every received share gets **0.020% of net rent from the whole island**. Net rent means rent from the whole island left after costs.
 
-6.1 **Property Sale**
+Rights from shares that are not issued do not increase another holder's amount. At 1,000 received shares, total base rent rights are **20% of net rent**. This is separate from the gross-income rent boost.
 
--   Each delivered share's base beneficial interest is 0.020% of net sale proceeds after liens, costs and taxes, subject to the governing trust agreement. At 1,000 shares that collective base interest is 20%, not 25%.
--   An additional sale-proceeds bonus for revenue-benefit units remains conditional on an explicit owner/trust decision. The 5% gross rental-income benefit does not automatically apply to a property sale. No additional sale-bonus funding is enabled by default.
--   The owner may fund the documented base sale allocation from operator-attested net proceeds: net proceeds × delivered shares ÷ 5,000, with whole-wei rounding and no additional bonus pool until confirmed. The funding transaction checks delivered base/revenue counts and requires the owner's exact ETH payment. It creates funded claims without executing a deed transfer, verifying the property sale or settling the trust's legal obligations.
+Dividends are usually paid each quarter to reduce admin costs and network fees. A quarter lasts three months. Holders must connect a wallet to the app. Holders must start a wallet claim to withdraw earned income.
 
-    6.2 **Forced Sale or Buyout**
+### 3.3 Rent boost shares
 
--   Under certain conditions (e.g., unanimous or threshold vote, eminent domain, significant damage), the Trust may be compelled to sell or repurchase the Property.
--   Token Holders will be notified through the dApp and given instructions on collecting their share of proceeds.
+The random draw assigns **five rent boost shares**. It draws them across the chosen cap. Each received rent boost share gets an extra **1% of gross rent from the whole island**. Gross income means money before costs. All five receive **5% gross rent** in total.
 
----
+Each keeps the same 0.020% base island and net-rent rights. The extra perk adds income, not ownership. If a boost share is not received, its amount does not go to another holder.
 
-## **7. Insurance and Disaster Recovery**
+The owner must supply real ETH to fund these amounts. Reports do not fund dividends on their own. The payment checks the expected base share count. It checks the expected rent boost share count too. It requires the exact payment.
 
-7.1 **Insurance Coverage**
+A share transfer does not move income your account already earned. Sending ETH alone does not create a dividend round.
 
--   The Trust maintains all-risk property insurance. Coverage typically includes hurricane damage, wind damage, flood, and other named storm events, subject to policy limits and deductibles.
--   In a total loss scenario where rebuilding is deemed infeasible, insurance proceeds are disbursed to the Trust, then proportionally distributed to Token Holders.
+## 4. Stays, member perks and events
 
-    7.2 **Hurricane Resilience**
+### 4.1 Stay boost
 
--   The main residence is built on reinforced pilings, designed for elevated storm surge resistance.
--   Post-storm procedures (e.g., dredging) restore displaced sand. Recent engineering upgrades address concrete spalling and strengthen the foundation.
+One random share has a stay boost. If the holder meets the rules, they get a **two-night stay each year**. The owner must confirm the stay. The start date sets the **UTC calendar year**. UTC is the time standard for this rule.
 
-    7.3 **Rebuilding Contingencies**
+The benefit registry allows one confirmed rare stay across all shares each year. It is the contract that tracks perk use. A pending request holds that use until it is cancelled or confirmed.
 
--   If a catastrophic event partially damages the Property, the Trust may decide to rebuild using insurance proceeds.
--   Token Holders may vote on allocating additional capital for large-scale repairs if insurance is insufficient.
+Dates depend on open space and the island schedule. Some dates may be closed. Other limits may apply.
 
----
+### 4.2 Member levels
 
-## **8. Regulatory and Compliance**
+Shares you get in **one wallet** set your member level.
 
-8.1 **REIT Compliance**
+| Shares received | Yearly member perk |
+| --- | --- |
+| 1–25 | 10% off one seven-night week |
+| 26–50 | 20% off one seven-night week |
+| 51–100 | 40% off one seven-night week |
+| 101+ | One free seven-night week |
 
--   The Project intends to structure its offering to align with U.S. REIT rules, including but not limited to ownership caps (the “5/50 rule”) and formal registration with the IRS.
--   The trust and its advisers must establish the applicable structure, filing requirements and current offering schedule; historical dates do not authorize a live offering.
+The year uses the service start date in UTC. It runs from January 1 to December 31.
 
-    8.2 **Securities Laws**
+The owner links approved wallets to an ID code with no personal details. The code represents one person the owner checked. The code is public on the chain. Linked wallets and wallets used for recovery share one yearly member use. A new link cannot reset use. Do not add personal details to this public code.
 
--   Tokens may be deemed securities under relevant securities laws. The Project, or its authorized entity, shall undertake necessary registrations, exemptions, or filings.
--   Participants may need to meet accreditation or other qualification requirements, depending on regulatory conditions.
+Holders must request dates in time through the official app.
 
-    8.3 **AML/KYC**
+### 4.3 Event boosts and booking rules
 
--   All Participants must pass AML/KYC checks prior to purchasing Tokens or receiving dividends.
--   The Project reserves the right to reject or freeze transactions that fail compliance checks.
+**Five event boost shares** give **15% off** each distinct live event the owner posts. A holder may invite up to **40 guests**. There is no yearly event-count limit. Each checked ID group may use one discount for each distinct event.
 
----
+A request holds the allowed use. Only cancelling a pending request frees that use. When the owner confirms, the contract checks current shares and whether the wallet is approved. A confirmed booking uses the allowance.
 
-## **9. Risk Factors**
+When the owner confirms, the island team accepts the booking. This does not prove a real service or payment for a stay. It does not prove title or who you are under law. The island team must still provide open dates and the real service.
 
-9.1 **Real Estate Market Volatility**
+## 5. Management and votes
 
--   The Property’s value and rental income are subject to broader economic, tourism, and market conditions.
+### 5.1 Daily control
 
-    9.2 **Technological Risks**
+The Trust or project owner keeps control of daily work. This includes upkeep and upgrades. Big choices may go to a vote under the contract rules. These may include an island sale or large sums spent on the Island.
 
--   ERC-1155 smart contracts may contain vulnerabilities. Although the Project plans audits and best practices, the risk of hacks, exploits, or blockchain downtime remains.
+### 5.2 Voting rights
 
-    9.3 **Liquidity**
+Each Share usually gives one vote, unless the vote rules say otherwise. Big choices need the majority set in the Trust or vote papers. A majority means the larger share of votes under those rules.
 
--   There is no guarantee that a robust secondary market will develop. Reselling Tokens may be challenging or subject to significant discounts.
+Legal rules may overrule or limit chain votes. REIT rules are one example.
 
-    9.4 **Regulatory Changes**
+## 6. A future sale or closure
 
--   Future laws or regulations could impact the Project’s operations, the compliance framework, or Token trading activity.
+### 6.1 Sale of the Island
 
----
+Each share you get has a base interest in net sale funds. It is **0.020%**. Net sale funds are money left after liens, costs and taxes. A lien is a legal claim against the Island. The right is subject to the trust terms.
 
-## **10. Disclaimers**
+At 1,000 shares, the total base interest is **20%, not 25%**.
 
-10.1 **No Investment Advice**
+An extra sale bonus needs an express choice by the owner or trust. This applies to rent boost shares. The **5% gross rent benefit does not also apply to a sale**. Extra sale-bonus funding starts off.
 
--   Nothing in these Terms, the White Paper, or the Project’s communications should be construed as financial, legal, or tax advice. Consult licensed professionals before participating.
+The owner may fund the documented base sale right:
 
-    10.2 **No Guarantee of Returns**
+**Base sale pool = reported net sale funds × received shares ÷ 5,000.**
 
--   Past performance or Property history does not guarantee future outcomes. Holdings may lose value.
+The island team reports the net sale funds. Each sum rounds down to whole wei. Wei is the smallest ETH unit. The extra bonus pool stays zero until confirmed.
 
-    10.3 **Force Majeure**
+The payment checks the base share count. It also checks the rent boost share count. The owner must pay the exact ETH amount.
 
--   The Project is not liable for any failure or delay caused by events beyond its reasonable control, including acts of God, natural disasters, war, or governmental action.
+This creates funded claims. It does not transfer a deed or check the island sale. It does not settle the Trust's legal duties.
 
----
+### 6.2 Required sale or buyout
 
-## **11. Governing Law and Dispute Resolution**
+Some events may require the Trust to sell or buy back the Island. One is a unanimous vote, where all voters agree. Another is a vote that meets the required threshold. Other events are major damage or eminent domain. Eminent domain means a government taking property under law.
 
-11.1 **Governing Law**
+The app will notify holders. It will give steps to collect their share of funds.
 
--   These Terms are governed by and construed in accordance with the laws of the State of Florida, without regard to conflict-of-law principles.
+## 7. Insurance and disaster recovery
 
-    11.2 **Venue**
+The island team makes the claims in this section. Current records must support them. This contract review does not check the claims.
 
--   Any disputes arising out of or in connection with these Terms shall be exclusively brought in the state or federal courts located in Monroe County, Florida.
+### 7.1 Insurance
 
-    11.3 **Arbitration** _(If Applicable)_
+The Trust says it keeps all-risk property insurance. Cover usually includes hurricanes, wind, floods and other named storms. The policy sets limits on payments. It also sets deductibles. A deductible is the loss amount the policy does not pay.
 
--   The Trust may require binding arbitration for certain disputes, as further detailed in a separate arbitration agreement or addendum.
+If total loss means the Island cannot be rebuilt, the insurer pays the Trust. The Trust then splits the funds. It uses each holder's interest to set their amount.
 
----
+### 7.2 Storm protection
 
-## **12. Amendments and Updates**
+The owner reports that the main home uses reinforced pilings. These are raised supports. Their design aims to resist storm surge.
 
--   The Project reserves the right to modify or update these Terms at any time to reflect changes in business operations, regulatory requirements, or market conditions.
--   Any material updates will be posted on the Project’s official website and, where possible, communicated via the dApp or community channels.
+The owner says dredging restores sand washed away by storms. The owner reports building upgrades. The upgrades address concrete spalling and strengthen the base. Spalling means concrete that cracks or breaks away.
 
----
+### 7.3 Rebuilding
 
-## **13. Acceptance**
+If a disaster partly harms the Island, the Trust may rebuild it with insurance funds. If those funds are too low, holders may vote to fund more big repairs.
 
-By purchasing, holding, or transferring Tokens, you acknowledge that you have read, understood, and agreed to these Terms and Conditions. If you do not agree to these Terms, you must refrain from participating in any Token transactions associated with Florida Island Tokenization.
+## 8. Legal and identity checks
 
----
+### 8.1 REIT plan
 
-### **Contact Information**
+The project intends to follow U.S. REIT rules. These include ownership caps and the **5/50 rule**. The rules include formal registration with the IRS.
 
-For more information, inquiries, or to request a copy of these Terms, please visit:
+The Trust and its advisers must set the legal structure. They must establish which filings are needed. They must set the current sale plan. Old dates do not permit a live sale.
 
--   **Website**: [FloridaIsland.com](https://floridaisland.com) _(Placeholder link)_
--   **Community**: Join our mailing list for official updates and community discussions.
+### 8.2 Securities laws
 
-> **Disclaimer**: This Terms and Conditions document is provided for informational purposes. It is not intended to supersede any legal documentation filed with regulatory authorities or the trust’s governing agreement. In case of discrepancies, official filings and trust agreements prevail.
+The Shares may count as securities. The laws that apply set this status. Securities are investments that may need special sale permissions. The project or the body it authorizes shall make needed filings. It shall get the registrations or exemptions that it needs. An exemption is an allowed exception to a rule.
+
+Buyers may need to meet accreditation rules. Other rules may apply too. Accreditation is a legal status for an investor. These rules set who can take part.
+
+### 8.3 AML/KYC checks
+
+All holders must pass AML/KYC checks before buying Shares or receiving dividends. The project keeps the right to reject or freeze trades that fail those checks.
+
+## 9. Risks
+
+### 9.1 Island markets
+
+Island value and rent depend on markets. They depend on how the wider economy does. They also depend on travel demand.
+
+### 9.2 Technology
+
+ERC-1155 contracts may contain faults. The project plans code audits. It plans good practices too. Hacks and exploits may still occur. The chain may stop. An exploit is an attack that uses a software fault.
+
+### 9.3 Resale
+
+A strong resale market may not develop. Shares may be hard to sell. A seller may need to accept a large price cut.
+
+### 9.4 Law changes
+
+Future laws may affect how the project runs. They may affect checks for legal rules. They may affect Share trades.
+
+## 10. Disclaimers
+
+### 10.1 No advice on investments
+
+These terms do not give advice about money, law or tax. The white paper and project messages do not give that advice either. Ask licensed experts for advice before you take part.
+
+### 10.2 No promised returns
+
+Past results do not promise future results. The Island's history does not promise them either. Your shares may lose value.
+
+### 10.3 Events beyond project control
+
+The project is not liable for failure or delay from events beyond its reasonable control. This means it does not owe for those failures or delays. These events include acts of God, natural disasters and war. They also include government action. This clause is called force majeure.
+
+## 11. Law and disputes
+
+### 11.1 Governing law
+
+Florida law governs these terms and how they are read. Conflict-of-law principles do not apply. These rules could select another place's laws.
+
+### 11.2 Courts
+
+Disputes from or connected to these terms must go only to courts in **Monroe County, Florida**. This means state or federal courts located there.
+
+### 11.3 Arbitration, if it applies
+
+The Trust may require binding arbitration for some disputes. Arbitration means a decision outside court. Binding means both sides must follow that decision. A separate agreement or addendum gives the arbitration terms. An addendum is a document that adds terms.
+
+## 12. Changes to the terms
+
+The project keeps the right to change these terms. It may do so at any time. Changes may reflect how it runs, laws or markets.
+
+The project site will post major changes. Where possible, the app or group channels will also share the changes.
+
+## 13. Your agreement
+
+When you buy, hold or transfer Shares, you confirm that you read these terms. You confirm that you understood them. You also agree to them.
+
+If you do not agree, you must not buy, hold or transfer this project's Shares.
+
+## Contacts
+
+- **Site:** [FloridaIsland.com](https://floridaisland.com). This is a planned link.
+- **News and talks:** Join the mailing list for news and talks.
+
+These terms give information. They do not replace the Trust's legal terms or files sent to regulators. Regulators are public bodies that apply the rules. If these terms conflict with those records, the official filings and trust terms control.

@@ -1,353 +1,405 @@
-# **Florida Island Tokenization White Paper** :palm_tree:
+# Florida Island white paper
 
-_Tokenizing a 1.25-Acre Island in Marathon, Florida via ERC-1155 Smart Contracts_ :chains:
+## 1. The project at a glance
 
----
+This project uses digital shares for an island. The island is **1.25 acres**. It is in Marathon, Florida. The island is East Sister Rock Island. The share contract follows the **ERC-1155** token rules. A token is a digital unit on a chain.
 
-## **1. Executive Summary** :page_facing_up:
+Each share you get has a fixed **0.020% base island interest**. This is a right to benefits set in the trust terms. It does not give the holder direct legal title.
 
-Florida Island Tokenization uses ERC-1155 shares for beneficial economic interests in a 1.25-acre private island located in Marathon, Florida. Each delivered share represents a fixed **0.020% base property interest**. At 1,000 delivered shares, the collective base interest is **20%**. Five randomly assigned revenue-benefit shares separately receive **5% of gross property rental income in total**, or **1% each**; that rental benefit does not increase their property ownership. The initial offering cap remains subject to owner confirmation; the contract supports a deployment-selected cap of 1,000–4,000, giving 20%–80% aggregate base interest at full delivery. The extra rental benefit and base net-rental allocation use different income bases and must not be described as a fixed 25% property stake. Authoritative trust documents must establish the legal rights; this implementation review does not verify title, insurance, registrations or future performance.
+- **1,000 received shares** have a total base interest of **20%**.
+- **4,000 received shares** have a total base interest of **80%**.
+- Five random rent boost shares receive extra rent income.
+- Each received rent boost share gets **1% of gross rent from the whole island**.
+- All five receive a separate **5% gross rent pool**.
+- The rent boost does not add island ownership.
 
-**Version 2 — corrected allocation and implementation review.** This version replaces conflicting 25% base-ownership and base-rental statements. Public sales remain disabled until the selected deployment, offering cap and audited randomness adapter are configured. The target network is Robinhood Chain Testnet; no production contract address is represented by this document.
+The owner must confirm the first live share cap. The contract allows a cap from **1,000 to 4,000** shares. The cap does not change one share's rights.
 
-The default engineering review configuration uses 1,000 shares; the first live offering cap awaits confirmation. Statements about property condition, history, insurance, legal title and regulatory structure are operator proposals or assertions requiring current supporting documents; this review does not independently validate them.
+Base rent rights use net income. The extra rent boost uses gross income. Net means after costs. Gross means before costs. These amounts do not make a fixed 25% island stake.
 
----
+### Version 2 and current limits
 
-## **2. Introduction** :wave:
+This version fixes earlier 25% base ownership and base rent claims. Public sales stay off until the chosen contract setup is ready. The cap must be ready too. An auditor must also check the random draw tool.
 
-### **2.1 Background** :earth_americas:
+The test network is **Robinhood Chain Testnet**. This paper does not give a contract address for a live sale. The review setup uses 1,000 shares. The owner must still confirm the first live cap.
 
-In traditional real estate, investing in unique or high-value properties often requires significant capital, limiting broad participation. Tokenization solves this by dividing an asset’s ownership into smaller, tradable digital tokens. Leveraging the reliability and transparency of Ethereum-based smart contracts, the Florida Island Tokenization project lowers barriers to real estate entry, offering more investors a chance to co-own a piece of paradise.
+Current trust papers must set the rights under law. This contract review does not check title or insurance. It does not check filings or future results. Claims about island condition, history and legal setup need current records. The island team must supply those records.
 
-### **2.2 Project Objectives** :dart:
+### Words used in this paper
 
-1. **Fractional Ownership** :jigsaw:  
-   Democratize island ownership through ERC-1155 tokens.
+- **Share:** A small part of the rights set in the trust terms.
+- **Wallet:** An app that holds your account. It lets you sign chain requests.
+- **ETH:** The coin used to pay on this chain. You also need ETH for fees.
+- **Gas:** The fee to send a chain request.
+- **Smart contract:** Code on the chain that follows set rules. It tracks shares and funded claims.
+- **Blockchain:** A shared record of chain requests. You can read its public records.
+- **Testnet:** A chain used to test the app. Test coins do not make this a live island sale.
+- **Pending shares:** Shares you paid for but did not get yet.
+- **Received shares:** Shares that the contract delivered to an approved wallet. They are no longer just a paid reservation.
+- **Base interest:** Your fixed right to trust benefits for each received share. It does not give direct legal title.
+- **Net rent:** Rent from the whole island left after costs.
+- **Gross rent:** Rent from the whole island before costs.
+- **Trust:** The legal body that holds title and sets holder rights.
+- **Snapshot:** The saved share count used for a vote.
+- **Quorum:** The number of votes needed for a valid result.
 
-2. **Income Generation** :moneybag:  
-   Provide token holders with a share of the island’s rental revenue and event income.
+## 2. Why the project exists
 
-3. **Future Appreciation** :chart_with_upwards_trend:  
-   Ensure token holders benefit from future appreciation, including any gains from a future island sale.
+### 2.1 Background
 
-4. **Enhanced Liquidity** :ocean:  
-   Enable a secondary market for tokens, improving liquidity for a traditionally illiquid asset.
+Buying a whole costly island often needs a lot of money. Digital shares split its rights to money into small parts. The project aims to let more people buy those rights. Contracts based on Ethereum record shares and trades. People can check those records.
 
----
+### 2.2 Project goals
 
-## **3. Asset Overview** :desert_island:
+1. Let people buy small rights to island benefits.
+2. Give holders a share of rent and event income.
+3. Let holders share gains from a future rise in value or sale.
+4. Provide a market where holders can sell shares.
 
-### **3.1 Property Description** :round_pushpin:
+These are project goals. A market or future profit is not promised.
 
--  **Location** :world_map:: Marathon, Florida, USA
--  **Land Size** :beach_umbrella:: 1.25-acre island plus additional seabottom rights
--  **Historical Planning Valuation** :dollar:: The original proposal used \$15,000,000; this is not a verified current appraisal. Current owner-reported values must be reviewed in the deployed reporting module with their reporting period.
--  **Historical Rental Assumption** :money_with_wings:: The original proposal used approximately \$100,000 monthly (including special events); this is not a verified current income statement or guaranteed return.
+## 3. The island and shares
 
-### **3.2 Ownership Structure** :house_with_garden:
+### 3.1 Property details
 
--  **Base Fractional Ownership**: 0.020% per delivered share; 1,000 delivered shares represent 20% and 4,000 represent 80%.
--  **Token Supply** :tickets:: Deployment cap selectable from 1,000 through 4,000; the initial cap requires owner confirmation. Paid reservations are distinct from delivered shares.
--  **Ownership per Token** :pie:: A fixed 0.020% beneficial base property interest, independent of cap. Revenue benefits do not add property equity.
--  **Token Price** :moneybag:: The original proposal used \$4,500 USD per share. The deployed primary price is denominated in ETH and may be updated by the owner. A USD price setting converts once through a verified fresh ETH/USD feed; it is not a continuous USD peg. The contract does not accept stablecoins for purchases.
+- **Location:** Marathon, Florida, USA.
+- **Land:** A 1.25-acre island, plus rights to extra seabottom land.
+- **Old planning value:** The first plan used **$15,000,000**. This is not a checked current appraisal.
+- **Old rent estimate:** The first plan used about **$100,000 a month**, with special events included. This is not a checked report of income now or a promised return.
 
----
+Read current owner reports in the reporting contract. Check the date and records that support each report.
 
-## **4. Tokenomics and Distribution** :bar_chart:
+### 3.2 Share structure
 
-### **4.1 Token Utility** :key:
+Each share you get has a fixed base island interest. It is **0.020%**. At 1,000 received shares, the total is 20%. At 4,000, the total is 80%. Rent boosts do not add island equity.
 
-Each ERC-1155 token grants the holder:
+The owner chooses the cap when the contract starts. The cap can be 1,000 through 4,000. The owner must confirm the first cap. Paying to reserve a share does not mean you received it.
 
-1. **Fractional Island Ownership** :jigsaw:  
-   A fixed 0.020% base beneficial property interest per delivered share, including the corresponding base interest in future net sale proceeds, subject to the trust agreement.
+The first plan used **$4,500 USD per share**. The deployed sale price uses **ETH**. The owner may change that price. The contract does not accept stablecoins for share purchases.
 
-2. **Rental Income Share** :chart_with_upwards_trend:  
-   0.020% of whole-property **net** rental income per delivered share. A delivered revenue-benefit share additionally receives 1% of whole-property **gross** rental income.
+The owner can set a USD price with an ETH/USD price feed. The feed must be checked and fresh. The feed converts that price to ETH once. The price does not then track the USD price at all times.
 
-3. **Voting / Governance** :ballot_box: \*(Subject to Governance Model)\
-   All token holders vote and provide input on property improvements and strategic decisions using their fractional assets as their vote; the more tokens help the more votes a user has to impact any decision that must be voted on.
+## 4. Share rights and random boosts
 
-> At 1,000 delivered shares, the base allocation is 20% of net rental income. The five delivered revenue-benefit shares separately receive 5% of gross rental income. These are distinct rights and distinct calculation bases: 20% net plus 5% gross is not a 25% property stake or necessarily 25% of one income amount. Unissued rights do not redistribute to issued holders.
+### 4.1 Base share rights
 
-### **4.2 Boost Perks** :gift:
+Each received share gives these rights:
 
-To encourage participation and add exclusivity, a limited number of tokens will be randomly awarded additional perks:
+1. **Base island interest:** 0.020%, subject to the trust terms. This includes its base share of future net sale funds.
+2. **Base rent income:** 0.020% of whole-island **net rent**.
+3. **Votes:** Holders can vote on improvements and key choices under the voting rules. More received shares give more voting weight.
 
-1. **Island Stay Boost (1 Token)** :hotel:
+A received rent boost share also gets 1% of whole-island **gross rent**.
 
-   -  **Benefit**: Entitles the holder to one free weekend (2 nights) on the island per year.
-   -  **Assignment**: One stay-benefit unit is drawn across the selected deployment cap. Its full collection count is guaranteed only when all units are assigned; categories may overlap on the same unit.
+At 1,000 received shares, total base rent rights are **20% of net rent**. All five received rent boost shares receive another **5% of gross rent**. These use different income amounts. They do not make 25% ownership or always equal 25% of one income amount.
 
-2. **Revenue Boost (5 Tokens)** :rocket:
+Rights from shares that are not issued do not go to other holders.
 
-   -  **Benefit**: Five revenue-benefit units separately share 5% of whole-property gross rental income, equally: 1% per delivered revenue-benefit unit. Their ordinary 0.020% base property and net-rental rights remain the same as every share.
-   -  **Assignment**: Five revenue-benefit units are drawn across the selected deployment cap. Only delivered benefit units accrue funded income; absent units do not increase another unit's benefit.
+### 4.2 Random boosts
 
-3. **Event Discount Boost (5 Tokens)** :tada:
-   -  **Benefit**: Grants the holder a 15% discount on any special event hosted on the island—covering weddings, corporate functions, team-building activities, or family gatherings. Each holder can invite up to 40 guests to share in this exclusive experience.
-   -  **Assignment**: Five event-benefit units are drawn across the selected deployment cap. Their holder may request the discount for every distinct active owner-published event, with no annual event-count limit; the same verified identity group cannot reuse one event.
+The random draw assigns a limited number of extra benefits. A share may have more than one boost.
 
----
+#### 1. Stay boost: one share
 
-## **5. Revenue Model** :money_with_wings:
+If the holder meets the rules, they get one free weekend stay each year. The stay is **two nights**.
 
-### **5.1 Monthly Rental Income** :house:
+The draw assigns one stay share across the chosen cap. The full count is promised only after it assigns all shares.
 
-Rental income varies and must be supported by operator records; the original \$100,000 monthly assumption is historical planning material. Rental revenue is intended to:
+#### 2. Rent boost: five shares
 
-1. **Cover Operating Expenses** :gear:: Maintenance, staff, and utilities.
-2. **Pay Base Dividends** :heavy_dollar_sign:: Each delivered share receives 0.020% of whole-property net rental income: 20% collectively at 1,000 delivered shares or 80% at 4,000.
-3. **Fund Additional Revenue Boost Pool** :star2:: Each delivered revenue-benefit unit receives 1% of whole-property gross rental income; all five collectively receive 5%. This benefit adds income, not property equity.
+The five rent boost shares share an extra **5% of gross rent**. This rent comes from the whole island. Each received rent boost share gets **1%**. Each keeps the same 0.020% base property and net-rent rights as any share.
 
-### **5.2 Dividend Distribution** :bank:
+The draw assigns five rent boost shares. It draws them across the chosen cap. Only received boost shares earn funded income. A missing share does not increase another share's benefit.
 
--  **Frequency** :calendar:: Quarterly disbursements to reduce gas fees and streamline accounting.
--  **On-Chain Accounting** :ledger:: Reports are owner attestations and do not send rent into the contract. The operator enters whole-property net and gross rental income separately and funds `basePool = netIncome × deliveredShares / 5,000` and `boostPool = grossIncome × deliveredRevenueUnits / 100`. The contract checks the delivered counts and exact ETH funding, divides each funded pool by its respective delivered count, and preserves prior account accrual after transfers. The owner supplies the ETH; unissued rights are not funded or redistributed.
--  **Withdrawal Mechanism** :arrow_down:: A “Withdraw” button within the dApp allows token holders to claim their accrued dividends.
+#### 3. Event boost: five shares
 
----
+An event boost gives **15% off** special island events. These may include weddings or work events. They may include team or family gatherings. Each holder may invite up to **40 guests**.
 
-## **6. Smart Contract Architecture** :bricks:
+The draw assigns five event shares. It draws them across the chosen cap. The holder may request a discount for each distinct live event the owner posts. There is no yearly event-count limit. The same checked ID group cannot use one event discount twice.
 
-### **6.1 ERC-1155 Standard** :scroll:
+## 5. Rent and payments
 
-ERC-1155 offers the ability to manage multiple token types (including fungible, semi-fungible, and non-fungible tokens) under one contract, which is both gas-efficient and flexible. For this project:
+### 5.1 Rent income
 
-1. **Fractional Ownership Tokens** :pie:  
-   Every delivered unit has identical base rights, with benefit types represented by the bitmask IDs 0–7 and fungible quantities. Paid purchases await verifiable randomness, ordered assignment and buyer-claimed delivery.
+Rent income can change. The island team must support reports with records. The old $100,000 monthly estimate was part of a plan.
 
-2. **Boost Tokens** :sparkles:  
-   Though minted under the same contract, these tokens carry additional attributes to track Island Stay, Revenue Boost privileges, or Event Discount entitlements.
+Rent income is intended to:
 
-### **6.2 Admin Interface** :computer:
+1. Pay costs such as repairs, staff and utilities.
+2. Pay base dividends of **0.020% of net rent from the whole island** per received share.
+3. Fund the separate rent boost of **1% of gross rent from the whole island** per received boost share.
 
-An admin dashboard allows the contract owner (the island’s manager) to:
+Base rights total 20% at 1,000 received shares, or 80% at 4,000. All five rent boost shares receive 5% gross in total. The extra rent adds income, not equity.
 
--  Update monthly revenue figures.
--  Update property value (after annual appraisals).
--  Initiate quarterly dividend payouts.
--  Access transaction logs, trade histories, and royalty fees.
+### 5.2 Dividend payments
 
-### **6.3 dApp and User Dashboard** :iphone:
+A dividend is funded income that a holder can claim. The plan calls for payments each quarter. A quarter lasts three months. This aims to reduce network fees and ease record keeping.
 
-Token holders can connect with a Web3 wallet (e.g., MetaMask or Phantom Wallet) to:
+A report from the owner does not send rent to the contract. The owner enters whole-island net and gross rent separately. The owner funds these pools with ETH:
 
--  View their share of the island’s value.
--  Track monthly rental income and dividend balances.
--  Initiate withdrawals of accrued revenue.
--  Check membership tier and any special boosts.
--  Schedule an island stay if they hold the Island Stay Boost token.
--  Take advantage of their event discount entitlements
+- **Base pool = net income × received shares ÷ 5,000.**
+- **Boost pool = gross income × received rent boost shares ÷ 100.**
 
----
+The contract checks the counts of shares received and exact ETH payment. Each pool is split across its own received share count. Rights that are not issued are not funded or shared with other holders.
 
-## **7. Membership Tiers** :medal_sports:
+The owner must supply the ETH. A transfer does not move income that an account already earned. Holders use the app's claim action to withdraw their earned dividends.
 
-### **7.1 Tier Mechanics** :level_slider:
+## 6. The contract and app
 
-Based on the number of tokens held, users qualify for tier-based perks **once per year**:
+### 6.1 The ERC-1155 standard
 
-| Tier                         | Tokens Held | Benefit                 |
-| ---------------------------- | ----------- | ----------------------- |
-| **Tier 1** :1st_place_medal: | 1 - 25      | 10% off 1 week per year |
-| **Tier 2** :2nd_place_medal: | 26 - 50     | 20% off 1 week per year |
-| **Tier 3** :3rd_place_medal: | 51 - 100    | 40% off 1 week per year |
-| **Tier 4** :trophy:          | 101+        | 1 free week per year    |
+ERC-1155 lets one contract support many token types. It supports whole-share amounts as well as shares with special benefits.
 
-> **Example** :bulb:: An investor holding 53 tokens qualifies for Tier 3, granting 40% off one rental week per year.
+Every received share has the same base rights. Share type IDs **0–7** record the boost flags:
 
-> **Note** :information_source:: Each Tier is redeemable only **once per year**.
+- **1:** Stay boost.
+- **2:** Rent boost.
+- **4:** Event boost.
 
-### **7.2 Tier Tracking** :mag:
+A type can combine flags. Paid purchases wait for a random draw that can be checked. Shares are assigned in order. The buyer then claims the shares.
 
--  **On-Chain** :chains:: The holder's single-wallet tier and benefit balances are checked on request and confirmation. The standalone benefit registry records requests, pending cancellations and owner confirmations. Annual periods use the UTC calendar year of service start. One membership seven-night week per verified identity group per year is allowed; the rare two-night stay also has one collection-wide annual allowance.
--  **Identity and Delivery** :file_folder:: An approved wallet is permanently bound to an opaque owner-attested identity group, so linked or recovery wallets share annual usage without publishing names or identity documents. Confirmed use consumes quota; only pending cancellation releases it. Confirmation attests operator acceptance, not proof of physical accommodation, payment or legal identity. Availability, scheduling and actual service remain operator responsibilities.
+### 6.2 Owner tools
 
----
+The owner dashboard lets the contract owner:
 
-## **8. Future Sale and Appreciation** :moneybag:
+- Enter monthly revenue reports.
+- Use each year's appraisal. Enter the island value.
+- Fund income payments each quarter.
+- Read past wallet actions and trades. Read the royalty fees.
 
-### **8.1 Island Sale** :money_with_wings:
+The owner manages the island. Contract records do not prove that a real service or payment took place outside the chain.
 
-If the island is sold in the future, each delivered share's base beneficial interest is 0.020% of net proceeds after applicable costs, subject to the governing trust agreement. The distribution is:
+### 6.3 Holder tools
 
--  **Base Allocation** :balance_scale:: Fixed 0.020% per delivered share; 1,000 shares collectively represent 20%, and 4,000 represent 80%.
--  **Revenue Boost Tokens** :star2:: An additional sale-proceeds bonus remains conditional and requires an explicit owner/trust decision. The 5% rental benefit does not automatically extend to a sale; no sale-bonus funding is enabled by default.
+Holders use a Web3 wallet that the app supports. MetaMask and a supported Phantom setup are examples. A Web3 wallet signs requests to the chain.
 
-The owner can explicitly fund the documented base sale allocation through the dApp: `basePool = operatorAttestedNetSaleProceeds × deliveredShares / 5,000`, with a zero additional pool while the conditional bonus remains unconfirmed. Both delivered base and revenue-unit counts are checked, and the owner's wallet supplies the exact ETH allocation with separate gas funds. Integer calculations round down to whole wei. This creates funded account claims; it does not execute a deed transfer, verify the sale or settle the legal trust agreement.
+Holders can use the app to:
 
-### **8.2 Property Value Updates** :chart_with_upwards_trend:
+- Read their share of the island value the owner reports.
+- Read rent reports. See funded income you can claim.
+- Claim earned income.
+- Check their member level and boosts.
+- Request a stay with a stay boost.
+- Request an event discount with an event boost.
 
-The property owner can update the appraised value yearly. This updated data, stored on-chain, helps token holders track capital appreciation.
+## 7. Member levels
 
----
+### 7.1 Yearly member perks
 
-## **9. Secondary Market, Transactions, and Royalties** :arrows_clockwise:
+The received share count in one wallet sets its level. Each member perk allows **one use per year**.
 
-### **9.1 Resale and Transfer** :handshake:
+| Level | Shares held | Yearly benefit |
+| --- | --- | --- |
+| Level 1 | 1–25 | 10% off one seven-night week |
+| Level 2 | 26–50 | 20% off one seven-night week |
+| Level 3 | 51–100 | 40% off one seven-night week |
+| Level 4 | 101+ | One free seven-night week |
 
-Approved wallets can use the integrated secondary marketplace or compliant peer-to-peer transfers. Integrated listings and offers capture their affiliate, royalty and marketing fee terms when created and apply them on paid settlement. ERC-2981 advertises royalty information to external marketplaces, whose payment cannot be forced by this contract. A plain peer-to-peer transfer does not automatically collect royalties.
+For example, a wallet with 53 received shares gets Level 3. It gets 40% off one week each year.
 
-### **9.2 Transaction History** :ledger:
+### 7.2 Tracking use and identity
 
-All token transactions and price histories will be accessible through the dApp. This offers transparency, enabling token holders and prospective buyers to see the historical performance of tokens.
+The contract checks one wallet's level and boosts when a request starts. It checks them again when the owner confirms. The benefit registry tracks the requests. It saves pending requests that are cancelled and requests the owner confirms.
 
----
+The service start date sets the year. The contract uses the **UTC calendar year**. This runs from January 1 to December 31. UTC is the time standard for this rule.
 
-## **10. Governance** :gear:
+Each checked ID group gets one seven-night member use per year. The rare two-night stay also has one allowance for the whole collection each year.
 
-### **10.1 Oversight** :office:
+The owner links each approved wallet to an ID code with no personal details. The code stands for one checked person. The code is public on the chain. The link stays fixed. Linked wallets and wallets used for recovery share yearly use. New links cannot reset use. Do not add names or ID files to this public code.
 
-Initially, governance lies with the project’s founding entity, managing:
+A confirmed use consumes the yearly right. Only cancelling a pending request frees its reserved use.
 
--  Rental operations and marketing.
--  Maintenance and improvements.
--  Annual appraisals and ensuring updates are made on-chain.
+When the owner confirms, the island team accepts the booking. This does not prove a real stay or payment. It does not prove who the holder is under law. The island team must provide dates, open space and the real service.
 
-### **10.2 Potential Decentralized Governance** :globe_with_meridians:
+## 8. A future sale and island value
 
-The on-chain governance module records proposals, delivered-share voting snapshots, quorum and outcomes. Proposal periods have fixed bounds of one through thirty days. Approved holders can vote using their recorded snapshot weight; execution records the outcome but does not automatically execute a property sale, payment or legal agreement. Operational and legal implementation remain the owner's responsibility under the trust documents.
+### 8.1 Selling the island
 
----
+If the island sells, each received share gets its base interest in net sale funds. That interest is **0.020%**, subject to the trust terms. Net sale funds are the money left after costs that apply.
 
-## **11. Risk Factors** :warning:
+- 1,000 received shares have a total base share of **20%**.
+- 4,000 received shares have a total base share of **80%**.
+- A sale bonus for rent boost shares needs an express choice by the owner or trust.
+- The **5% rent boost does not also apply to a sale**.
+- Extra sale-bonus funding starts off.
 
-1. **Real Estate Market Volatility** :chart_with_downwards_trend:: Property values and rental income are subject to broader economic trends.
-2. **Regulatory Environment** :page_with_curl:: Token-based ownership models may face evolving legal and compliance requirements.
-3. **Technological Risks** :desktop_computer:: Smart contract vulnerabilities or blockchain downtime.
-4. **Liquidity Risks** :no_entry_sign:: While fractional tokens can be traded, the real estate market itself is relatively illiquid compared to traditional fungible assets.
+The owner can fund the documented base sale right in the app:
 
----
+**Base sale pool = reported net sale funds × received shares ÷ 5,000.**
 
-## **12. Compliance and Regulatory Summary** :bookmark_tabs:
+The island team reports the net sale funds. The extra pool stays zero while the sale bonus is unconfirmed. The payment checks the base share count. It also checks the rent boost share count.
 
-### **12.1 REIT Structure & Rationale** :bank:
+The owner pays the exact ETH amount. The wallet needs extra ETH for gas. Gas is the network fee. Whole-number sums round down to wei, the smallest ETH unit.
 
--  **Fractional Real Estate via Smart Contracts** :chains:  
-   A REIT-like model under U.S. law allows fractional ownership of real estate through ERC-1155 tokens. The trust (e.g., East Sister Rock LLC) retains legal title, while the tokens represent beneficial interests in that trust.
+The payment creates funded claims for accounts. It does not transfer a deed or prove the sale. It does not settle the trust agreement's legal duties.
 
--  **Compliance with Existing REIT Rules** :file_cabinet:  
-   The original proposal discussed a REIT structure and an April 2025 launch. Those dates and legal assumptions are historical planning material, not a current launch authorization or verified filing status. The trust and its advisers must establish the correct legal structure, registrations and offering permissions before a live sale.
+### 8.2 Island value reports
 
--  **50% Ownership Limit and ‘No More Than Five Owners’ Rule** :no_entry_sign:  
-   The intended regulatory structure and applicable concentration rules require authoritative legal and identity review. The contract enforces owner-attested wallet approval and a wallet holding limit, not complete beneficial-owner aggregation or an independently verified REIT “5/50” test. Linking wallets for benefit usage does not itself establish regulatory compliance.
+The owner can enter a value from an appraisal each year. The chain stores the report. Holders can use it to track reported changes in value.
 
-### **12.2 Security & Sale Mechanics** :shield:
+## 9. Trading and royalties
 
--  **Token Sale Launch** :money_mouth_face:  
-   The original April 2025–April 2026 schedule is historical planning material. No current sale is authorized until the owner confirms the offering cap and the deployment, audited randomness adapter and applicable legal permissions are established.
+### 9.1 Selling or sending shares
 
--  **AML/KYC & Investor Vetting** :lock:  
-   Participants require external identity review and owner-attested wallet approval before purchases, delivery, share transfers or dividend claims. The contract can block unapproved wallets and wallet-cap violations. It does not verify personal identity or every legal concentration threshold, and no personal identity documents belong on chain.
+Approved wallets can use this market or allowed transfers between wallets. The market saves fee terms when listings or offers start. These include affiliate, royalty and marketing fees. A paid trade uses those saved terms when it settles.
 
--  **Secondary Market Trading & Royalties** :money_with_wings:  
-   The integrated marketplace deducts its recorded royalty/affiliate/marketing terms. ERC2981 publishes royalty information, but arbitrary external marketplaces and payment-free peer-to-peer transfers do not automatically enforce royalty payments.
+An affiliate fee pays the person who referred a trade. A royalty is a fee owed under the saved trade terms.
 
--  **Voting & Forced Sales** :hammer:  
-   Governance records a delivered-share snapshot vote and quorum outcome. It does not accept or execute a real property-sale offer or automatically fund proceeds. The owner and trust must implement legal decisions and fund any distributions explicitly.
+ERC-2981 lists royalty fees for outside markets. The contract cannot force an outside market to pay. A plain transfer between wallets does not charge royalty fees.
 
--  **Title & Legal Standing** :scroll:  
-   Legal title and beneficial rights must be established by current authoritative property and trust documents. Token balances provide on-chain evidence of units, not independent proof of title or enforceability.
+### 9.2 Transaction records
 
-### **12.3 Regulatory Considerations & Risk Mitigation** :mag:
+The app is intended to show share transactions and past prices. Holders and possible buyers can use these records to review past trades. Past prices do not promise future prices.
 
--  **Securities Regulation** :clipboard:  
-   Fractional real estate interests may constitute securities under U.S. law. The trust and its advisers must determine and obtain the required registrations, exemptions and offering permissions. Wallet approval and contract execution do not certify compliance.
+## 10. Voting and management
 
--  **Potential Tax & 1031 Exchange Queries** :moneybag:  
-   The trust will consult attorneys/CPAs to address individual investor questions concerning capital gains, 1031 exchanges, and other real estate tax implications.
+### 10.1 Who manages the island
 
--  **Blockchain vs. Legal Registry** :chains:  
-   While the smart contract enforces token distribution and ownership, formal legal records remain with the trust. Courts and regulators can rely on trust documentation for any legal oversight.
+At first, the group that founded the project manages:
 
--  **Case Law & Smart Contracts** :balance_scale:  
-   On-chain records do not determine legal enforceability or establish regulatory compliance. Owner controls, operator obligations and trust documents remain relevant; independent legal review is required for the real-world offering.
+- Rent and marketing.
+- Repairs and improvements.
+- Yearly appraisals and reports on the chain.
 
-### **12.4 Summary of Compliance Roadmap** :triangular_flag_on_post:
+### 10.2 Holder votes
 
-1. **Offering Readiness** :rocket:: Confirm the live cap, trust rights, permissions, reviewed deployment and audited randomness adapter before enabling sales.
-2. **Legal Structure** :hourglass_flowing_sand:: Obtain current legal and tax advice and required filings; the historical schedule is not a verified rule or deadline.
-3. **AML/KYC Attestation** :lock_with_ink_pen:: Perform external identity review, then attest wallet approval; the contract enforces configured per-wallet limits without independently aggregating beneficial owners.
-4. **Smart Contract Governance** :gear:: Record snapshot-based proposals and outcomes; operator action remains required for property decisions, reports and funded distributions.
+The voting contract saves plans for a vote, called proposals. It also saves share snapshots, quorum and results. A snapshot records shares that wallets received at a set point. Quorum is the vote count needed for a valid result.
 
-The implementation supplies on-chain records and controls. Its legal, security and real-world operating obligations remain subject to independent review and operator fulfillment.
+Votes last from **one to thirty days**. Approved holders vote with their share count from the saved snapshot.
 
----
+The execute action saves the vote result. It does not sell the island or send money. It does not carry out legal terms. The owner must carry out business and legal choices under the trust terms.
 
-## **13. Conclusion** :palm_tree:
+## 11. Risks
 
-The Florida Island Tokenization Project aims to revolutionize fractional real estate investment by merging a stunning Florida private island with ERC-1155 tokens. Investors receive both a share of ongoing rental income and the potential upside of future property appreciation. Tiered perks and randomly assigned “boost” tokens add exclusivity and rewards, while an intuitive dApp facilitates transparent tracking of revenue, governance, and compliance.
+1. **Property market:** Values and rent can change with the wider economy.
+2. **Laws:** Rules for digital island interests may change.
+3. **Technology:** Contracts may have faults. The blockchain may stop or face attacks.
+4. **Resale:** Shares may be hard to sell. Property is less easy to sell than many other assets.
 
-### **Next Steps** :checkered_flag:
+## 12. Legal rules and checks
 
--  **dApp Launch** :iphone:: Complete front-end integration for monthly updates, dividend payouts, and tier-tracking.
--  **Smart Contract Audit** :microscope:: Undergo external security audits to ensure robust, secure code.
--  **Community Building** :people_holding_hands:: Educate prospective investors and manage the secondary market rollout.
--  **Regulatory Filings** :page_with_curl:: Commence the formal REIT process and filing in alignment with the token sale schedule.
+### 12.1 The planned trust and REIT structure
 
-Join us in shaping a new era of real estate ownership—where fractional tokens on Ethereum open the door to a tropical paradise in Marathon, Florida.
+The plan describes a REIT-like trust under U.S. law. A REIT is a real estate investment trust. The trust keeps legal title. East Sister Rock LLC is an example of such a trust. Shares give beneficial interests in that trust.
 
----
+The first plan discussed a REIT trust and an **April 2025** start. These are old plan details. They do not prove filings. They do not allow a live sale now.
 
-## **14. Insurance & Risk Management** :umbrella:
+The trust and its advisers must set the right legal structure. They must make the needed filings before a live sale. They must get the needed sale permissions.
 
-### **14.1 Hurricane and Natural Disaster Preparedness** :cyclone:
+The planned holder rules include the REIT **5/50 rule**. Law and identity checks must establish which limits apply. The contract checks wallets that the owner approves. It checks each wallet's share limit. It does not count all beneficial owners across wallets. It does not check the full 5/50 test on its own.
 
-East Sister Rock Island has a long history of resilience in the face of hurricanes and other natural disasters. Located in a hurricane-prone region, the property has been directly impacted by major storms in the past—most notably Hurricane Katrina—yet has endured and been successfully rebuilt multiple times. Key structural and operational measures bolster the island’s ability to withstand extreme weather events:
+Linked wallets help track benefit use. They do not prove that the project meets legal rules.
 
-1. **Elevated Foundation on Pilings** :houses:
+### 12.2 Checks before purchases and transfers
 
-   -  **Storm Surge Resistance** :ocean:: The main residence is built on reinforced pilings designed to keep the house elevated above storm surge levels. During rare Category 4-5 hurricanes, backfill may wash away from around the pilings, but the elevated home remains largely unaffected, showcasing its resilient design.
-   -  **Post-Storm Restoration** :construction_worker:: While uncommon, if storms cause backfill displacement, the owners are experienced and prepared to address it. Utilizing proven dredging methods, they recover sand, silt, and rocks from around the island and return it beneath the house and around the island, effectively restoring the natural shoreline.
+The old **April 2025–April 2026** sale plan does not permit sales now. A live sale needs a confirmed cap and checked contract setup. An auditor must check the draw tool. The needed legal permissions for a sale must be in place.
 
-2. **Recent Structural Upgrades** :toolbox:
+Buyers need identity checks outside the contract. AML means anti-money-laundering checks. These check for unlawful use of money. KYC means know-your-customer checks. These check who a person is.
 
-   -  **Reinforced Pilings** :building_construction:: In the past year, the pilings were rebuilt and made thicker and stronger to combat concrete spalling caused by corroded rebar. These new reinforcements extend the longevity of the structure and enhance its ability to handle turbulent conditions.
-   -  **Improved Engineering** :blue_square:: Modern engineering practices ensure the house meets or exceeds current building codes for storm resiliency, incorporating lessons learned from the island’s decades of hurricane experience.
+The owner approves wallets on the chain. Approval controls buying, getting and sending shares. It also controls dividend claims. The contract can block wallets that lack approval. It can block wallets that breach share limits.
 
-3. **50-Year Track Record** :old_key:
-   -  **Historical Performance** :spiral_calendar:: Over the last five decades, East Sister Rock Island has successfully weathered multiple hurricanes. Each event has ultimately led to improvements that further protect the property against future storms.
-   -  **Commitment to Rebuilding** :handshake:: The owners have repeatedly demonstrated their readiness to restore the island in the aftermath of any catastrophic damage, ensuring the property remains a viable asset for investors over the long term.
+The contract does not check who people are. It does not check every legal limit on holdings. Do not place ID files on the chain.
 
----
+This market charges three types of saved fees. They are royalty, affiliate and marketing fees. Outside markets and plain transfers do not always charge royalty fees.
 
-### **14.2 Insurance Coverage & Contingencies** :shield:
+Votes record share snapshots, quorum and results. Votes do not accept or carry out a real island sale. They do not fund sale proceeds. The owner and trust must carry out legal choices and fund payments.
 
-To mitigate financial risks associated with storm damage or other natural catastrophes, the property maintains comprehensive insurance policies. _The island home is fully insured for full repair/replacement cost in case of any natural disaster._ These policies are structured to cover potential damages to both the main residence and other critical infrastructure on the island:
+Current island and trust records must establish legal title and beneficial rights. Beneficial rights mean rights to trust benefits. Token balances record shares on the chain. They do not prove title on their own. They do not prove rights a court will enforce.
 
-1. **All-Risk Property Insurance** :umbrella:
+### 12.3 Legal and tax review
 
-   -  **Coverage Scope** :page_facing_up:: The policy typically includes wind damage, storm surge, flooding, and structural losses. Specific clauses address potential full or partial losses due to named storms or other natural events.
-   -  **Payout Mechanisms** :money_with_wings:: Should the island suffer extensive or total damage, the insurance provider would disburse funds according to the coverage limits and terms of the policy.
+Small island interests may count as securities. U.S. law sets this status. Securities are investments that may need special sale permissions. The trust and its advisers must get needed filings and approvals. They must get any needed exemptions. Exemptions are allowed exceptions to the rules. Approval of a wallet does not prove that the project meets the law.
 
-2. **Token Holder Protections** :busts_in_silhouette:
+The trust will ask lawyers and tax experts about holder taxes. It will use certified public accountants, also called CPAs. Questions include capital gains, **1031 exchanges** and other island taxes. Capital gains are gains from selling an asset. A 1031 exchange needs expert tax advice.
 
-   -  **Proportional Claim** :scales:: In the unlikely event of a total loss where rebuilding is infeasible, insurance payouts would be allocated to the trust. Each token holder, having a fractional beneficial interest, would receive their proportional share of any net insurance proceeds—after policy deductibles and other costs.
-   -  **Rebuilding Contingencies** :hammer_and_wrench:: If the ownership group decides to rebuild, the insurance proceeds would be directed toward reconstruction. Any remainder or shortfall is subject to a governance process (see Section 10) for deciding how to allocate additional capital or distribute surplus payouts.
+The contract controls share records and transfers. The trust keeps formal legal records. Courts and rule makers can rely on the trust terms.
 
-3. **Risk Management Governance** :gear:
-   -  **Decision-Making** :thought_balloon:: In the event of significant damage, token holders would likely vote on major decisions, such as whether to rebuild immediately or hold insurance funds until conditions stabilize. A threshold majority (as defined in the governance model) would guide any collective action.
-   -  **Disclosure and Updates** :loudspeaker:: The property owner and administrative team would provide timely updates through the dApp, detailing all insurance claims, repair timelines, and expected financial impacts.
+Chain records do not settle whether rights can be enforced in court. They do not prove that legal rules are met. Owner controls, team duties and trust terms still matter. The live sale needs outside legal review.
 
----
+### 12.4 Steps before a live sale
 
-### **14.3 Summary of Risk Mitigation** :white_check_mark:
+1. Confirm the cap, trust rights and sale permissions.
+2. Check the contract setup. An auditor must check the draw tool.
+3. Get current advice on law and tax. Make the required filings.
+4. Check identities outside the contract.
+5. Approve wallets and set each wallet's share limit.
+6. Record each proposed plan and vote result. Use the saved share counts.
+7. Carry out island choices. Make reports and fund payments.
 
--  **Engineering Strength** :wrench:: Elevated pilings and recent structural enhancements significantly reduce storm-surge vulnerabilities.
--  **Comprehensive Insurance** :money_with_wings:: Robust policies offer financial coverage against catastrophic loss, ensuring that repairs or payouts are executed fairly and efficiently.
--  **Historic Resilience** :recycle:: Decades of successful post-hurricane restorations underscore the island’s proven capacity for recovery.
--  **Transparent Governance** :speaking_head:: Token holders will be informed of and can participate in major post-disaster decisions, preserving confidence and clarity in the investment.
+The old schedule is not a checked rule or deadline. The contract provides records and controls. Outside reviewers must still check law, safety and real-world duties. The island team must carry out those duties.
 
-This multifaceted approach balances architectural resilience, financial planning, and on-chain governance to protect fractional owners’ interests in East Sister Rock Island.
+## 13. Project plan
 
----
+The project aims to share rights to island benefits through ERC-1155 shares. Holders may receive rent and gains from a rise in value. Member perks and random boosts add stay, rent or event rights. The app records income, votes and contract use.
 
-## **Contact and Resources** :telephone_receiver:
+### Planned next steps
 
--  **Website** :link:: [FloridaIsland.com](https://floridaisland.com) _(Placeholder link)_
--  **Smart Contract** :page_with_curl:: To be released upon final audit completion.
--  **Community** :speech_balloon:: Join our mailing list for the latest updates on token sales and platform releases.
+- Finish the app tools for reports, claims and member levels.
+- Obtain outside contract security audits.
+- Teach new buyers how shares and perks work.
+- Plan the secondary market start.
+- Start the required REIT process and filings in line with the sale plan.
 
-> **Disclaimer** :no_pedestrians:: This White Paper is for informational purposes only. It does not constitute financial, legal, or investment advice, nor is it a solicitation to buy or sell securities. Prospective participants should consult licensed professionals regarding any legal, tax, or financial matters prior to engaging with this project.
+## 14. Insurance and storm risks
+
+These claims come from the island team or the earlier plan. They need current records to support them. This review does not check them on its own.
+
+### 14.1 Storm plans and building work
+
+The island sits in an area with hurricane risk. The plan describes major past storms, including **Hurricane Katrina**. It describes rebuilding after storms.
+
+#### Raised foundations
+
+The owner reports that the main home stands on reinforced pilings. Pilings are supports that raise the house above the ground. The design aims to resist storm surge, the rise of sea water during a storm.
+
+In rare **Category 4–5 hurricanes**, fill around the supports may wash away. The plan says the raised home stays mostly unharmed. Current building records must support that claim. Engineering records must also support it.
+
+The owner reports skill in replacing soil after storms. Dredging moves sand, silt and rocks from around the island. Workers put this fill beneath the house and around the shore.
+
+#### Reported structural work
+
+The plan says workers rebuilt the pilings in the prior year. They made them thicker and stronger. They addressed concrete spalling from rusting rebar. Spalling means concrete that cracks or breaks away. Rebar is steel inside concrete.
+
+The owner says newer engineering improves storm strength. The owner says it meets or exceeds current building codes. These claims need up-to-date records.
+
+#### Reported 50-year history
+
+The plan describes **five decades**, or 50 years, of storms and repairs. It says repairs led to later upgrades. It describes the owners' repeated work to restore the island after severe damage.
+
+Past repairs do not promise a future result.
+
+### 14.2 Insurance and loss plans
+
+The owner reports insurance for the home and key island buildings. The plan says the home has full repair or replacement cover. It says this covers any natural disaster. Actual cover depends on current policies and their limits.
+
+#### Property insurance
+
+The planned all-risk cover usually includes wind, storm surge and floods. It usually covers harm to the buildings. Policy terms address full or part loss. They cover named storms and other natural events.
+
+After severe or total damage, the insurer would pay. The policy terms would set the amount. Its limits would apply too.
+
+#### Holder rights after a loss
+
+If total loss means the island cannot be rebuilt, the insurer would pay the trust. Holders would get their share of net insurance funds under their trust rights. These are beneficial interests, or rights to trust benefits. Policy deductibles and other costs reduce those funds. A deductible is the amount the policy does not pay.
+
+If the ownership group chooses to rebuild, insurance would fund that work. Votes would address extra money needed or money left over. See Section 10.
+
+#### Decisions and updates
+
+After major damage, holders would likely vote on key choices. They may choose to rebuild now. They may keep funds until conditions improve. The vote rules set the majority needed.
+
+The owner and admin team would post timely news in the app. The news would cover claims, repair dates and the expected effects on funds.
+
+### 14.3 Risk plan
+
+The plan relies on raised supports and building work. It relies on insurance and past repairs. It calls for news to holders and votes after major damage.
+
+These plans aim to protect holders' interests. They do not remove storm, funding or legal risks. Current policy records must support the island team's claims. Current engineering records must also support them.
+
+## Contacts and resources
+
+- **Site:** [FloridaIsland.com](https://floridaisland.com). This is a planned link.
+- **Smart contract:** The plan calls for release after the final audit.
+- **News and talks:** Join the mailing list for sale and app news.
+
+This white paper gives information only. It is not advice about money, law or investments. It is not an offer to buy or sell securities. Ask licensed experts about law, tax and money before you take part.
